@@ -18,8 +18,8 @@ const ProfileImage = () => (
     <Image
       priority
       src= {profilePic}
-      height={244}
-      width={244}
+      height={344}
+      width={344}
       alt="Willie Ochoa"
       placeholder="blur"
       className={utilStyles.borderCircle}

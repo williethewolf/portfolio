@@ -1,6 +1,9 @@
 import React from "react"
 import Image from "next/image"
 import IDElogo from "../public/images/Visual_Studio_Code_1.35_icon.svg"
+
+//Modal imports
+import Draggable from 'react-draggable';
 import restrictedGif from "../public/images/restricted.gif"
 import restrictedaudio from '../public/audio/magicword.mp3'
 import restrictedaudioLoop from '../public/audio/magicword_loop.mp3'
@@ -28,7 +31,7 @@ export default function Navbar() {
 //Modal Display
     const [showModal, setShowModal] = React.useState(false);
 
-
+    
 //Audio playback
 
     const [audio, setAudio] = React.useState(null)
@@ -57,22 +60,7 @@ export default function Navbar() {
     };
       }, []);
     
-    const start = () => {
-        if( !audioPlaying){
-        audio.play()
-        setAudioToggle(true)
-        }
-        audio.addEventListener('ended', () => setAudio(false));
-        addEventListener("ended", function()
-        {
-            audio = new Audio(restrictedaudioLoop)
-            audio.play()
-        })
-      }
 
-      const stop = () =>{
-        
-      }
 //Fullscreen gimmick
 const [isFullscreen, setIsFullscreen] = React.useState(false);
 
@@ -90,11 +78,18 @@ React.useEffect(() => {
     return (
         <>
             {showModal ? (
+                <Draggable
+                handle=".handle"
+                defaultPosition={{x: 0, y: 0}}
+                position={null}
+                grid={[25, 25]}
+                scale={1}
+                >
             <>
             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                 <div className="relative w-auto my-6 mx-auto max-w-3xl">
                     <div  className="border-0 shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                        <div className="bg-stone-300  py-1 flex justify-between">
+                        <div className="bg-stone-300  py-1 flex justify-between handle">
                             <span className="pl-3">Magic_word.exe</span>
                             <ul className="flex justify-end">
                                 <li className="">
@@ -126,9 +121,10 @@ React.useEffect(() => {
             </div>
             <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
             </>
+            </Draggable>
         ) : null}
 
-        <nav className={`bg-stone-80 w-full ${sticky ? "stickyfix" : "" }`} id="Navigation">
+        <nav className={`bg-stone-80 z-30 w-full ${sticky ? "stickyfix" : "" }`} id="Navigation">
                         <div className="flex h-100 text-sm md:text-xl p-1 bg-stone-800">
                             <span className='mx-3 flex hidden md:block md:w-6'>
                             <Image
