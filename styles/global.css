@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Terminal_font';
+  src: local('Terminal_font'), url(../styles/terminal_font.woff) format('woff');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+html,
+body {
+  /* padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px; */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+.terminal_text{
+font-family: Terminal_font;
+
+}
+
+.stroked_text{
+  -webkit-text-stroke: 1px grey
+}
+
+@media only screen and (max-width: 768px){
+  .stroked_text{
+    -webkit-text-stroke: 2px grey
+  }
+  
+  }
+
+#navigation:not(.stickyfix){
+position: relative;
+}
+
+.stickyfix{
+  position: fixed;
+  top:0;
+}

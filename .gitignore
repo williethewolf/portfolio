@@ -15,6 +15,9 @@
 # production
 /build
 
+# file system
+*.Identifier
+
 # misc
 .DS_Store
 
