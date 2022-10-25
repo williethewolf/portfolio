@@ -113,7 +113,7 @@ export default function Techstack(){
                 </div>
             </div>
             {/* <h2 className="text-4xl md:text-7xl my-10">React</h2>  */}
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap flex-wrap md:flex-nowrap justify-center">
                    
                 <div className="md:w-1/5 m-3 grid justify-items-center">
                     <Image
