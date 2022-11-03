@@ -2,15 +2,17 @@ import Techstack from "../components/techstack";
 
 export default function AboutMe() {
     return (
-    <div className="mb-16 w-full">
-        <div className=" mx-5 md:mx-60"><Techstack/></div>
-        <h1 className="text-5xl md:text-8xl m-5 md:m-auto text-right">About me</h1>
-        <section className="grid md:text-5xl">
+    <div className="w-full win95_bg">
+        <div className=" mx-5 md:mb-14 md:mx-60"><Techstack/></div>
+        <div className=" bg-gray-300"> <button>Start</button> Windows 95</div>
+        
+        <section className="grid md:text-5xl bg-slate-100 pb-16 ">
+        <h1 className="text-5xl md:text-7xl m-5 md:mr-20 text-right">About me</h1>
             <div >
                 
                </div>
-            <div>
-                <img src="https://picsum.photos/2024/600" alt="" className=""/>
+            <div className="flex flex justify-center items-center">
+                <img src="https://picsum.photos/2524/600" alt="" className=""/>
             
             </div>
             <div className="mx-5 md:mx-60">

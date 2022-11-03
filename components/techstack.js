@@ -22,11 +22,11 @@ import bo from "../public/images/techstack_icons/bootstrap.svg"
 
 export default function Techstack(){
     return(
-        <container>
-            <h2 className="text-4xl md:text-7xl my-10">Tech Stack</h2> 
+        <container className="">
+            <h2 className="text-4xl md:text-7xl py-10">Tech Stack</h2> 
             <div className="flex flex-wrap justify-center">
                    
-                <div className="md:w-1/5 m-3 grid justify-items-center">
+                <div className="w-1/2 md:w-1/5 m-3 grid justify-items-center">
                     <Image
                         src= {js}
                         width="200%"
@@ -35,7 +35,7 @@ export default function Techstack(){
                     />
                     <p className="text-2xl md:text-4xl">JavaScript</p>
                 </div>
-                <div className="md:w-1/5 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center">
                     <Image
                         src= {py}
                         width="200%"
@@ -44,7 +44,7 @@ export default function Techstack(){
                     />
                     <p className="text-2xl md:text-4xl">Python</p>
                 </div>
-                <div className="md:w-1/5 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center">
                     <Image
                         src= {jsn}
                         width="200%"
@@ -57,7 +57,7 @@ export default function Techstack(){
             {/* <h2 className="text-4xl md:text-7xl my-10">Backend frameworks</h2>  */}
             <div className="flex flex-wrap md:flex-nowrap justify-center">
                    
-                <div className="md:w-1/6 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center">
                     <Image
                         src= {no}
                         width="200%"
@@ -66,7 +66,7 @@ export default function Techstack(){
                     />
                     <p className="text-2xl md:text-4xl">Node.js</p>
                 </div>
-                <div className="md:w-1/6 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center">
                     <Image
                         src= {ex}
                         width="200%"
@@ -75,7 +75,7 @@ export default function Techstack(){
                     />
                     <p className="text-2xl md:text-4xl">Express.js</p>
                 </div>
-                <div className="md:w-1/6 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center">
                     <Image
                         src= {dj}
                         width="200%"
@@ -84,7 +84,7 @@ export default function Techstack(){
                     />
                     <p className="text-2xl md:text-4xl">Django</p>
                 </div>
-                 <div className="md:w-1/6 m-3 grid justify-items-center">
+                 <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center">
                     <Image
                         src= {mg}
                         width="200%"
@@ -93,7 +93,7 @@ export default function Techstack(){
                     />
                     <p className="text-2xl md:text-4xl">MongoDB</p>
                 </div>
-                <div className="md:w-1/6 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center">
                     <Image
                         src= {mgo}
                         width="200%"
@@ -102,7 +102,7 @@ export default function Techstack(){
                     />
                     <p className="text-2xl md:text-4xl">Mongoose</p>
                 </div>
-                <div className="md:w-1/6 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center">
                     <Image
                         src= {pg}
                         width="200%"
@@ -115,7 +115,7 @@ export default function Techstack(){
             {/* <h2 className="text-4xl md:text-7xl my-10">React</h2>  */}
             <div className="flex flex-wrap flex-wrap md:flex-nowrap justify-center">
                    
-                <div className="md:w-1/5 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center">
                     <Image
                         src= {re}
                         width="200%"
@@ -124,7 +124,7 @@ export default function Techstack(){
                     />
                     <p className="text-2xl md:text-4xl">React</p>
                 </div>
-                <div className="md:w-1/5 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center">
                     <Image
                         src= {nx}
                         width="200%"
@@ -134,7 +134,7 @@ export default function Techstack(){
                     <p className="text-2xl md:text-4xl">Next.js</p>
                 </div>
                    
-                <div className="md:w-1/5 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center">
                     <Image
                         src= {tw}
                         width="200%"
@@ -143,7 +143,7 @@ export default function Techstack(){
                     />
                     <p className="text-2xl md:text-4xl">Tailwind CSS</p>
                 </div>
-                <div className="md:w-1/5 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center">
                     <Image
                         src= {mt}
                         width="200%"
@@ -152,7 +152,7 @@ export default function Techstack(){
                     />
                     <p className="text-2xl md:text-4xl">Materialize CSS</p>
                 </div>
-                <div className="md:w-1/5 m-3 grid justify-items-center">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center">
                     <Image
                         src= {bo}
                         width="200%"

@@ -11,8 +11,9 @@ export default function Terminal() {
                 "I made my first game using BASIC on an old laptop at age=10",
                 "I'm a software engineer and I take it very seriously",
                 "I've been very absorved by Stable Diffusion prompting",
-                "I've worked with some of the greatets Dota2 teams (EG & OG)",
-                "I used to make movies and have a passion for the media",
+                "I made a very innovative VR game for Google Carboard and relased it on the play store",
+                "I've worked with some of the top Dota2 teams (EG & OG)",
+                "I used to make movies and have a passion for the media (and I still do!)",
                 "Jurassic Park would have been a success if they didn't skim on paying Dennis Nedry",
                 ]} speed = {38} eraseSpeed= {20} cursor={"█"}/></h2>
             </div>

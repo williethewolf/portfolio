@@ -1,4 +1,3 @@
-import next from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../components/layout.module.css'
@@ -70,7 +69,7 @@ export default function Layout({ children, home }) {
                     <div className='my-5 md:my-20'>
                         <div className=''><ProfileImage/></div>
                     </div>
-                    <h1 className="font-mono text-white text-6xl  mb-6 md:text-9xl fontfamily:Terminal_font stroked_text"><ReactTypingEffect text={name} speed = {100}  eraseDelay = {9999999999} eraseSpeed= {50} cursor={" "}/></h1>
+                    <h1 className=" text-white text-6xl ochoa_logo mb-6 md:text-9xl stroked_text"><ReactTypingEffect text={name} speed = {100}  eraseDelay = {9999999999} eraseSpeed= {50} cursor={" "}/></h1>
                     </div>
                     <Terminal/>
                     <div className='w-full'><Navbar/></div>
@@ -85,7 +84,7 @@ export default function Layout({ children, home }) {
                 </Link>
                 <h2 className={utilStyles.headingLg}>
                     <Link href="/">
-                        <a className={utilStyles.colorInherit}>{name}</a>
+                        <a className={`terminal_text ${utilStyles.colorInherit}`}>{name}</a>
                     </Link>
                 </h2>
                 </>
@@ -100,7 +99,15 @@ export default function Layout({ children, home }) {
             </Link>
             </div>
       )}
-
+        <footer>
+            <div>
+                <div className='grid grid-cols-3 justify-items-center'>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                </div>
+            </div>  
+        </footer>
     </div>
     )
 }

@@ -134,7 +134,7 @@ React.useEffect(() => {
                                 alt="Willie Ochoa"
                             />  
                             </span>
-                         <div className=" flex justify-between w-screen ">
+                         <div className=" flex justify-between w-full ">
                         <ul className='text-stone-100 mx-3 md:mr-12 flex h-full'>
                             <li className='hover:bg-stone-600 pr-3 md:pr-4 flex'><a className="border md:border-0 border-stone-600 px-2" href="#projects">Projects</a></li>
                             <li className='hover:bg-stone-600 pr-3 md:pr-4 flex'><a className="border md:border-0 border-stone-600 px-2" href="#IDE">Resume</a></li>

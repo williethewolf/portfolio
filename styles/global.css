@@ -6,8 +6,10 @@
   font-family: 'Terminal_font';
   src: local('Terminal_font'), url(../styles/terminal_font.woff) format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
+                            'embedded-opentype', and 'svg' */                            
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
 html,
 body {
@@ -27,10 +29,18 @@ img {
   max-width: 100%;
   display: block;
 }
+
+.win95_bg{
+  background-color: #018281;
+}
 .terminal_text{
 font-family: Terminal_font;
-
 }
+
+.ochoa_logo{
+  font-family: 'Major Mono Display', monospace
+}
+
 
 .stroked_text{
   -webkit-text-stroke: 1px grey
