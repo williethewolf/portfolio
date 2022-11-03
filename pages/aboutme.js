@@ -1,10 +1,15 @@
 import Techstack from "../components/techstack";
+import StartMenu from "../components/StartMenubar";
+
 
 export default function AboutMe() {
     return (
-    <div className="w-full win95_bg">
-        <div className=" mx-5 md:mb-14 md:mx-60"><Techstack/></div>
-        <div className=" bg-gray-300"> <button>Start</button> Windows 95</div>
+    <div className="w-full">
+        <div className=" w-full win95">
+            <div className=" mx-5 md:mb-14 md:mx-60 "><Techstack/></div>
+        <StartMenu />
+            
+        </div>
         
         <section className="grid md:text-5xl bg-slate-100 pb-16 ">
         <h1 className="text-5xl md:text-7xl m-5 md:mr-20 text-right">About me</h1>

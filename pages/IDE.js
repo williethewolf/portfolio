@@ -5,9 +5,9 @@ export default function IDE() {
             <h1 className="text-white p-2 md:p-5">RESUME</h1>
             <container className="md:mx-20 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>  
-                    <p>
+                    <div>
                         <span className="text-purple-500">class </span><span className="text-yellow-400">Resume{'{'}</span>
-                        <p>
+                        <div>
                             <span className="text-purple-500">constructor</span><span className="text-purple-300">(</span><span className="text-red-400">title<span className="text-sky-300">,</span> skills<span className="text-sky-300">,</span> experience<span className="text-sky-300">,</span> projects<span className="text-sky-300">,</span> education</span><span className="text-purple-300">){'{'}</span>
                             <ul className="indent-10">
                                 <li><span className="text-red-500">this</span><span className="text-sky-300">.</span><span className="text-white">title</span> <span className="text-sky-300">=</span> <span className="text-red-400">title</span><span className="text-sky-300">,</span></li>
@@ -17,19 +17,19 @@ export default function IDE() {
                                 <li><span className="text-red-500">this</span><span className="text-sky-300">.</span><span className="text-white">education</span> <span className="text-sky-300">=</span> <span className="text-red-400">education</span><span className="text-sky-300">,</span></li>
                             </ul>
                             <p className="text-purple-300 indent-10">{'}'}</p>
-                        </p>
+                        </div>
                         <span className="text-yellow-400"> {'}'}</span>
-                    </p>
+                    </div>
                 </div>
                 <div>  
-                    <p>
+                    <div>
                         <span className="text-purple-500">let</span><span className="text-white"> willieOchoa</span> <span className="text-sky-300">= new</span> <span className="text-yellow-400"> Resume</span>
-                        <p>
+                        <div>
                             <ul className="indent-10">
                                 <li><span className="text-white">willieOchoa</span><span className="text-sky-300">.</span><span className="text-white">title</span> <span className="text-sky-300">=</span> <span className="text-sky-300">"</span><span className="text-lime-300">Full Stack Software Engineer</span><span className="text-sky-300">"</span></li>
                                 <li><span className="text-white">willieOchoa</span><span className="text-sky-300">.</span><span className="text-white">skills</span> <span className="text-sky-300">=</span> 
                                 <span className="text-yellow-500">[</span>
-                                    <p className="indent-44 md:indent-56">
+                                    <div className="indent-44 md:indent-56">
                                     <ul>
                                         <li><span className="text-yellow-500">[</span><span className="text-sky-300">"</span><span className="text-lime-300">JavaScript</span><span className="text-sky-300">"</span></li>
                                         <li><span className="text-sky-300">"</span><span className="text-lime-300">React</span><span className="text-sky-300">"</span><span className="text-sky-300">,</span></li>
@@ -46,7 +46,7 @@ export default function IDE() {
                                         <li className="text-yellow-500">]</li>
                                     </ul>
                                     <p className="text-yellow-500 indent-52">]</p>
-                                    </p>
+                                    </div>
                                 </li>
                                 <li><span className="text-white">willieOchoa</span><span className="text-sky-300">.</span><span className="text-white">experience</span> <span className="text-sky-300">=</span> <span className="text-yellow-500">[</span>
                                     <ul className="indent-32 md:indent-52">
@@ -71,8 +71,8 @@ export default function IDE() {
                                     </ul>
                                 </li>
                             </ul>
-                        </p>
-                    </p>
+                        </div>
+                    </div>
                 </div>
             </container>
            
