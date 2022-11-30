@@ -18,31 +18,11 @@ export default function BrowserWindow({url, visible, height, width}) {
       return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // function CalculateBounds(){
-    //   if (typeof window !== 'undefined') {
-    //     let boundWidth = width - windowwidth
-    //     let boundHeight = height - windowheight
-    //     console.log( `width ${boundWidth}`)
-    //     return{ boundWidth, boundHeight }
-    //   }
-    //   }
-  
-    // let [TotalWidthBounds, setTotalWidthBounds] = useState(0);
-    // let [TotalHeightBounds, setTotalHeightBounds] = useState(0);
-
-    // useEffect(() => {
-    //   let measures = CalculateBounds()
-    //   setTotalWidthBounds = measures.boundWidth 
-    //   setTotalHeightBounds = measures.boundHeight
-    // },[ height,width])
-
-
-
    console.log(width)
   return (
     <Draggable
     bounds={{ left: 0, right: width-windowWidth, top:0, bottom: height-windowHeight-50}} grid={[10, 10]}>
-    <div className="absolute border-solid p-2 border-gray-300 bg-gray-300 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,3)] w-6/6 m:w-2/3 h-3/5 z-20" ref={elementRef}>
+    <div className="absolute border-solid p-2 border-gray-300 bg-gray-300 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,3)] w-6/6 md:w-2/3 h-3/5 z-20  flex flex-col" ref={elementRef}>
         <section>
         <div className="w-full bg-blue-800 text-white text-center flex justify-between"> <div>NotScape Navigator</div> <div className="text-black flex justify-end"> <button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)]">-</button><button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)]">❐</button><button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)]">x</button></div> </div>
         </section>
@@ -64,11 +44,11 @@ export default function BrowserWindow({url, visible, height, width}) {
           </select></div>
         <div className="place-self-end">Notscape</div>
         </section>
-        <section>
+        <section className="h-full bg-white">
           <LanguagesWeb/>
         </section>
-        {/* <iframe className="w-full h-full" src={url} target='_top' sandbox='' >
-        </iframe> */}
+        <iframe className="w-full h-full" src={url} target='_top' sandbox='' >
+        </iframe>
     </div>
     </Draggable>
   )

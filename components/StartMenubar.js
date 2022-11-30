@@ -5,10 +5,11 @@ import Image from "next/image";
 
 export default function StartMenu(){
     const [showStartMenu, setShowStartMenu] = React.useState(false)
+    const [showBrowser, setShowbrowser] = React.useState(true)
 
     //To show languages
     const [showLangMenu, setShowLangMenu] = React.useState(false)
-    const [langSelected, setSelectedLang] = React.useState("ENG")
+    const [langSelected, setSelectedLang] = React.useState("EN")
     const [showLangWindow, setShowLangWindow] = React.useState(false)
 
     const [showFilmMenu, setShowFilmMenu] = React.useState(false)
@@ -16,7 +17,8 @@ export default function StartMenu(){
 
     
     return (
-        <div className=" bg-gray-300 flex justify-between relative text-xl"> 
+        <div className=" bg-gray-300 flex justify-between relative text-xl">
+                <div> 
                 <button onClick={() => {setShowStartMenu(!showStartMenu)}} className="w95StartButton p-1">
                     <div className="border border-dashed border-gray-400 ">
                         <Image
@@ -28,6 +30,11 @@ export default function StartMenu(){
                         &nbsp;Start
                     </div>
                 </button>
+                { showBrowser ? (
+                    <span className="taskbarItem selected p-2">Notscape Navigator</span>
+                ) : null
+                }
+                </div>
                 { showStartMenu ? (
                 <div className="w95StartMenu grid grid-cols-5">
                     <div className="hidden md:block bg-gray-400 col-span-1">
@@ -72,8 +79,8 @@ export default function StartMenu(){
                     </div>
                 </div>
                 ) : null}
-                <div>
-                    <Clock/>
+                <div className="border-2 border-gray-400">
+                <span className="px-3 inline-block align-middle">{langSelected}</span><Clock/>
                 </div>
             </div>
     )

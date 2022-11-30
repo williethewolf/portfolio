@@ -22,10 +22,8 @@ export default function Clock () {
     setTimeout(Clock, 1000);
 
     return (
-        <>
-            <div className="border-2 border-gray-400 h-full">
-                <span className="px-3 inline-block align-middle">{time}</span>
-            </div>
+        <>    
+            <span className="px-3 inline-block align-middle">{time}</span>
         </>
     )
     };

@@ -52,8 +52,18 @@ img {
 .w95StartButton:active{
     transform: scale(0.98);
     transform: translate(1px, 1px);
-    @apply bg-gray-400 border-t-gray-500 border-l-gray-500 border-b-gray-400 border-r-gray-400;;
+    @apply bg-gray-400 border-t-gray-500 border-l-gray-500 border-b-gray-400 border-r-gray-400;
 
+}
+
+.taskbarItem.selected{
+  transform: scale(0.98);
+  transform: translate(1px, 1px);
+  @apply bg-gray-400 border-t-gray-500 border-l-gray-500 border-b-gray-400 border-r-gray-400;
+}
+
+.taskbarItem{
+  @apply terminal_text border-4 border-r-gray-400 border-b-gray-400;
 }
 
 .w95StartMenu{

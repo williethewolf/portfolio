@@ -28,7 +28,7 @@ export default function AboutMe() {
     return (
     <div className="w-full">
         <section className="w-full win95" id="desktop"  ref={elementRef}>
-            <BrowserWindow url="https://webarchive.loc.gov/all/20020808180045/http://www.javascript.com/"  width ={width} height= {height}/>
+            <BrowserWindow url="https://www.google.com"  width ={width} height= {height}/>
             <div className=" mx-5 md:mb-14 md:mx-60 "><Techstack /></div>
         <StartMenu />
             
