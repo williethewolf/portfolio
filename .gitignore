@@ -31,3 +31,9 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+#temp backups and olde versions
+techstack.bk
+
+#unused resources
+/public/images/w95/Windows 95 ALL ICONS v1.1

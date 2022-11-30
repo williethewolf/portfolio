@@ -78,18 +78,14 @@ React.useEffect(() => {
     return (
         <>
             {showModal ? (
-                <Draggable
-                handle=".handle"
-                defaultPosition={{x: 0, y: 0}}
-                position={null}
-                grid={[25, 25]}
-                scale={1}
-                >
+               
             <>
             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                 <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                <Draggable
+                >
                     <div  className="border-0 shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                        <div className="bg-stone-300  py-1 flex justify-between handle">
+                        <div className="bg-stone-300  py-1 flex justify-between">
                             <span className="pl-3">Magic_word.exe</span>
                             <ul className="flex justify-end">
                                 <li className="">
@@ -116,12 +112,13 @@ React.useEffect(() => {
                                 Close
                             </button>               */}
                         </div>
-                   
+                        </Draggable> 
                 </div>
+                
             </div>
             <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
             </>
-            </Draggable>
+            
         ) : null}
 
         <nav className={`bg-stone-80 z-30 w-full ${sticky ? "stickyfix" : "" }`} id="Navigation">

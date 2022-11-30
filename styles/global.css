@@ -30,12 +30,16 @@ img {
   display: block;
 }
 
+.shortcut a{
+  cursor: url("/images/w95/w95cursor.png"), default;
+}
+
 .win95{
   background-color: #018281;
-  cursor: url("/images/w95/w95cursor.png"), pointer;
+  cursor: url("/images/w95/w95cursor.png"), default;
 }
 .w95StartButton{
-  cursor: url("/images/w95/w95cursor.png"), pointer;
+  cursor: url("/images/w95/w95cursor.png"), default;
   @apply terminal_text border-4 border-r-gray-400 border-b-gray-400;
 
 }
@@ -60,22 +64,22 @@ img {
 
 }
 .w95StartMenuEle{
-  cursor: url("/images/w95/w95cursor.png"), pointer;
+  cursor: url("/images/w95/w95cursor.png"), default;
  
 }
 .w95StartMenuEle a{
-  cursor: url("/images/w95/w95cursor.png"), pointer;
+  cursor: url("/images/w95/w95cursor.png"), default;
 }
 
 .w95StartMenuEle:hover{
-  cursor: url("/images/w95/w95cursor.png"), pointer;
+  cursor: url("/images/w95/w95cursor.png"), default;
   @apply bg-gray-500 
 
 }
 
 .w95StartSubMenu{
   /* transform: translate(275%, 0px); */
-  @apply absolute px-4 py-2 -right-32 top-0 border-2 border-gray-400 z-10
+  @apply absolute px-4 py-2 -right-32 border-2 border-gray-400 z-10
 }
 .terminal_text{
 font-family: Terminal_font;

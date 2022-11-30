@@ -10,6 +10,10 @@ export default function StartMenu(){
     const [showLangMenu, setShowLangMenu] = React.useState(false)
     const [langSelected, setSelectedLang] = React.useState("ENG")
     const [showLangWindow, setShowLangWindow] = React.useState(false)
+
+    const [showFilmMenu, setShowFilmMenu] = React.useState(false)
+
+
     
     return (
         <div className=" bg-gray-300 flex justify-between relative text-xl"> 
@@ -29,14 +33,14 @@ export default function StartMenu(){
                     <div className="hidden md:block bg-gray-400 col-span-1">
 
                     </div>
-                    <div className=" col-span-4 py-4">
+                    <div className="col-span-5 md:col-span-4 py-4">
                         <ul>
                             <li className="px-4 py-2 w95StartMenuEle" 
                                 onMouseEnter={() => setShowLangMenu(true)}
                                 onMouseLeave={() => setShowLangMenu(false)}>
                                     <div className="w-full"><span className="pr-4">Spoken Languages</span>  	<span className="absolute right-0">➤</span></div>
                                     { showLangMenu ? (
-                            <ul className=" bg-gray-300 w95StartSubMenu">
+                            <ul className=" bg-gray-300 w95StartSubMenu  top-0">
                                 <li className="w95StartMenuEle w-100 px-4 py-2">English</li>
                                 <li className="w95StartMenuEle px-4 py-2">Spanish</li>
                                 <li className="w95StartMenuEle px-4 py-2">Italian</li>
@@ -45,7 +49,20 @@ export default function StartMenu(){
                             </ul>
                                     ) : null}
                             </li>
-                            <li className="px-4 py-2 w95StartMenuEle"><a href="#">Film Background 	<span className="absolute right-0">➤</span></a></li>
+                            <li className="px-4 py-2 w95StartMenuEle"
+                             onMouseEnter={() => setShowFilmMenu(true)}
+                             onMouseLeave={() => setShowFilmMenu(false)}>
+                                <div className="w-full"><span href="#">Film Background 	<span className="absolute right-0">➤</span></span></div>
+                                    { showFilmMenu ? (
+                            
+                            <ul className=" bg-gray-300 w95StartSubMenu top-14">
+                                <a target="_blank" href="http://imdb.me/williamwolffe"><li className="w95StartMenuEle w-100 px-4 py-2">IMDB</li></a>
+                                <li className="w95StartMenuEle px-4 py-2">Reel</li>
+                                <li className="w95StartMenuEle px-4 py-2">Website</li>
+
+                            </ul>
+                                ) : null}
+                            </li>
                             <li className="px-4 py-2 w95StartMenuEle"><a href="#">Other Projects	<span className="absolute right-0">➤</span></a></li>
                             <li className="px-4 py-2 w95StartMenuEle"><a href="#">Games 	<span className="absolute right-0">➤</span></a></li>
                             <hr />
