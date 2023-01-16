@@ -11,7 +11,8 @@ export default [
       Kick back, input your Steam Id64, pick random games until you find one you like or straight up open up a surprise.
       
       It's time to let off some STEAM©!</p>,
-    url: "https://github.com/williethewolf/SteamOff"
+    url: "https://github.com/williethewolf/SteamOff/",
+    get languageAPI(){this.url.slice(18)}
   },
   {
     name:
@@ -20,7 +21,11 @@ export default [
     description:
     <p>Plant Parenthood is an app that allows Plant Parent to organize, tend, learn, and share their favorite indoor plants.
     learn more in our <a href="https://docs.google.com/presentation/d/1w9EXJ40Zl0EQq0UZT1XZ10TUgkHsbPInjGRPclx0slQ">slide show.</a></p>,
-    url: "https://github.com/williethewolf/SteamOff"
+    url: "https://github.com/williethewolf/plant_parenthood/",
+    get languageAPI(){fetch(`https://api.github.com/repos${this.url.slice(18)}languages`)
+                      .then(response => response.json())
+                      
+                      }
   },
   {
     name:
@@ -28,7 +33,10 @@ export default [
     thumbnail: "https://github.com/williethewolf/Kanbas/raw/main/assets/Screenshot%202022-07-27%20004057.png",
     description:
     <p>A minimalistic Kanban based project manager full stack app.</p>,
-    url: "https://github.com/williethewolf/kanbas"
+    url: "https://github.com/williethewolf/kanbas/",
+    get languageAPI(){fetch(`https://api.github.com/repos${this.url.slice(18)}languages`)
+                      .then(response => response.json())
+                      }
   },
   {
     name:
@@ -37,15 +45,21 @@ export default [
     description:
     <p>A multiplayer naval combat game for 2 players, playing locally, sharing the device. 
       Taking turns, the players attack each other until one of the ship's hull health is 0. Sails work as a buffer against damage with 30% chance of receiving damage. If sail's health reaches 0, all the damage will be absorbed by the hull.</p>,
-    url: "https://github.com/williethewolf/Pirates-of-the-Silicon-Sea/"
+    url: "https://github.com/williethewolf/Pirates-of-the-Silicon-Sea/",
+    get languageAPI(){fetch(`https://api.github.com/repos${this.url.slice(18)}languages`)
+                      .then(response => response.json())
+                      }
   },
   {
     name:
       "Landscaper Tycoon",
-    thumbnail: "https://camo.githubusercontent.com/d6675e12b18b97164066f58b8e2e9363644b9a027c99db34756afc7f8085cd4b/68747470733a2f2f7065616b6d656d6f72792e66696c65732e776f726470726573732e636f6d2f323031342f30362f636c69756671782e6a7067",
+    thumbnail: "https://raw.githubusercontent.com/williethewolf/Landscaper-clicker-minigame/main/assets/landscaperscreencap.png",
     description:
     <p>A tycoon type clicker browser mini game.</p>,
-    url: "https://github.com/williethewolf/Landscaper-clicker-minigame"
+    url: "https://github.com/williethewolf/Landscaper-clicker-minigame/",
+    get languageAPI(){fetch(`https://api.github.com/repos${this.url.slice(18)}languages`)
+                      .then(response => response.json())
+                      }
   },
   
 ];

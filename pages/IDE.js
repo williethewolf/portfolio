@@ -6,7 +6,7 @@ export default function IDE() {
             <container className="md:mx-20 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>  
                     <div>
-                        <span className="text-purple-500">class </span><span className="text-yellow-400">Resume{'{'}</span>
+                        <span className="text-purple-500">class </span><span className="text-yellow-400">Resume{' {'}</span>
                         <div>
                             <span className="text-purple-500">constructor</span><span className="text-purple-300">(</span><span className="text-red-400">title<span className="text-sky-300">,</span> skills<span className="text-sky-300">,</span> experience<span className="text-sky-300">,</span> projects<span className="text-sky-300">,</span> education</span><span className="text-purple-300">){'{'}</span>
                             <ul className="indent-10">

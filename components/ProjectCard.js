@@ -1,11 +1,14 @@
-export default function ProjectCard({name,thumbnail,description,url, index}) {
+export default function ProjectCard({name,thumbnail,description,url, index, languageAPI}) {
+    console.log(languageAPI)
   return (
     <div key={index} className="max-w-m bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 place-content-center">
-        <a href="#">
+        {/* Working on adding language usage from the Git hub API */}
+        {/* <div>{String(languageAPI)} here</div> */}
+        <a href={url}>
             <img className="shadow-xl" src={thumbnail} alt={name} />
         </a>
         <div className="p-5">
-            <a href="#">
+            <a href={url}>
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h5>
             </a>
             <div className="mb-3 font-normal text-gray-700 dark:text-gray-400">

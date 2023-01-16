@@ -1,21 +1,26 @@
-import React from "react";
+import React, {useState, useEffect,} from 'react';
 import Clock from "../components/clock";
 import w95Logo from "../public/images/w95/w95logo.svg"
 import Image from "next/image";
 
-export default function StartMenu(){
-    const [showStartMenu, setShowStartMenu] = React.useState(false)
-    const [showBrowser, setShowbrowser] = React.useState(true)
+
+export default function StartMenu(browserStatus, handleBrowserState, handleBrowserVis){
+    const [showStartMenu, setShowStartMenu] = useState(false)
 
     //To show languages
-    const [showLangMenu, setShowLangMenu] = React.useState(false)
-    const [langSelected, setSelectedLang] = React.useState("EN")
-    const [showLangWindow, setShowLangWindow] = React.useState(false)
+    const [showLangMenu, setShowLangMenu] = useState(false)
+    const [langSelected, setSelectedLang] = useState("EN")
+    const [showLangWindow, setShowLangWindow] = useState(false)
 
-    const [showFilmMenu, setShowFilmMenu] = React.useState(false)
+    const [showFilmMenu, setShowFilmMenu] = useState(false)
 
+    function switchBrowserVis(){
+        handleBrowserVis
+        console.log("im helping!")
+    }
 
     
+
     return (
         <div className=" bg-gray-300 flex justify-between relative text-xl">
                 <div> 
@@ -30,10 +35,24 @@ export default function StartMenu(){
                         &nbsp;Start
                     </div>
                 </button>
-                { showBrowser ? (
+                
+                {/* { browserStatus  ? ( */}
+                <button onClick={() =>{handleBrowserState("inactive")}}>
                     <span className="taskbarItem selected p-2">Notscape Navigator</span>
-                ) : null
-                }
+                </button>
+                {/* ): (
+                    browserStatus== "inactive" ?(
+                        <button onClick={() =>  {handleBrowserVis}}>
+                        <span className="taskbarItem p-2">Notscape Navigator</span>
+                        </button>
+                    ):null
+                
+                )
+            } */}
+
+                
+
+
                 </div>
                 { showStartMenu ? (
                 <div className="w95StartMenu grid grid-cols-5">

@@ -24,7 +24,9 @@ export default function Home() {
       <section id="about">
         <AboutMe/>
       </section>
-      <section className='bg-gradient-to-br from-purple-300 to-fuchsia-500' id="projects">
+      <section 
+      className='bg-gradient-to-br from-purple-600 to-fuchsia-400' 
+      id="projects">
         <Projects/>
       </section>
     </Layout>

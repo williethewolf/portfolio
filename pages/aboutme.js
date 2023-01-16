@@ -2,6 +2,7 @@ import Techstack from "../components/techstack";
 import StartMenu from "../components/StartMenubar";
 import BrowserWindow from "../components/BrowserWindow";
 import React, {useState, useEffect, useRef} from 'react';
+import AboutBlurb from "../components/AboutBlurb";
 
 
 export default function AboutMe() {
@@ -10,6 +11,9 @@ export default function AboutMe() {
     const [height, setHeight] = useState(0);
     const elementRef = useRef(null);
     //put ref in div ref={elementRef}
+
+    const [browserState, setBrowserState] = useState("open")
+    const [browserVis, setBrowserVis] = useState(null)
     
     useEffect(() => {
         function handleResize() {
@@ -23,28 +27,60 @@ export default function AboutMe() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+
+    function handleBrowserState(state) {
+        setBrowserState(`${state}`)
+    }
+
+    const handleBrowserVis = () => {
+        console.log("And I don't do shit!")
+        setBrowserVis(!browserVis)
+    }
+
+    // useEffect(() =>{
+    //     handleBrowserState()
+    // },[])
+
+    useEffect(() => {
+    function updateVis(){
+        if (browserState == "open"){
+            setBrowserVis(true)
+            //setBrowserState("closed")
+            
+        }
+        else if(browserState == "inactive"){
+            setBrowserVis(false)
+            //setBrowserState("open")
+        }
+        else{
+            setBrowserVis(false)
+            //setBrowserState("open")
+        }
+    }
+    updateVis()
+    }, [browserState]);
+
+   
     
     
     return (
     <div className="w-full">
         <section className="w-full win95" id="desktop"  ref={elementRef}>
-            <BrowserWindow url="https://www.google.com"  width ={width} height= {height}/>
+            <BrowserWindow url="https://www.google.com"  width ={width} height= {height} browserVis={browserVis} handleBrowserState={handleBrowserState}/>
             <div className=" mx-5 md:mb-14 md:mx-60 "><Techstack /></div>
-        <StartMenu />
+            <button  onClick={handleBrowserVis}>press here</button>
+        <StartMenu browserStatus={browserState} handleBrowserState={handleBrowserState} handleBrowserVis={handleBrowserVis}/>
             
         </section>
         
-        <section className="grid md:text-5xl bg-slate-100 pb-16 ">
-        <h1 className="text-5xl md:text-7xl m-5 md:mr-20 text-right">About me</h1>
-            <div >
+        <section className="grid md:text-5xl bg-slate-100 ">
+        
+            <div>
                 
-               </div>
-            <div className="flex flex justify-center items-center">
-                <img src="https://picsum.photos/2524/600" alt="" className=""/>
-            
             </div>
-            <div className="mx-5 md:mx-60">
-            <p>Lorem fistrum me cago en tus muelas torpedo jarl diodenoo al ataquerl de la pradera. Va usté muy cargadoo me cago en tus muelas diodeno benemeritaar ese hombree no te digo trigo por no llarl ese pedazo de te voy a borrar el cerito caballo blanco caballo negroorl fistro quietooor. Hasta luego Lucas hasta luego Lucas torpedo apetecan hasta luego Lucas hasta luego Lucas amatomaa sexuarl. No te digo trigo por no llamarte Rodrigor torpedo por la gloria de mi madre apetecan de la pradera.</p>
+            <div className="">
+            <AboutBlurb/>            
+
             </div>
         </section>
     </div>
