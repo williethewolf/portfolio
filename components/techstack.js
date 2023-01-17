@@ -30,9 +30,9 @@ export default function Techstack(){
             <h2 className="text-4xl md:text-7xl py-10">Tech Stack</h2> 
             <div className="flex flex-wrap justify-center">
                    
-                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
+            <div className="w-1/3 lg:w-1/5 m-3 grid justify-items-center relative shortcut">
                     <a target="_blank" href="https://www.javascript.com/">
-                    <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15 -left-1 md:left-5 bottom-7 md:bottom-9">
+                    <div className="absolute bg-white z-10 w-8 xl:w-15 h-8 lg:h-15 -left-1 lg:left-5 bottom-7 lg:bottom-9">
                     <Image
                         src= {scArrow}
                         width="60%"
@@ -49,7 +49,7 @@ export default function Techstack(){
                     </a>
                     <p className="text-2xl md:text-4xl">JavaScript</p>
                 </div>
-                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
+                <div className="w-1/3 lg:w-1/5 m-3 grid justify-items-center relative shortcut">
                     <a target="_blank" href="https://www.python.org">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-9">
                         <Image
@@ -69,7 +69,7 @@ export default function Techstack(){
                     <p className="text-2xl md:text-4xl">Python</p>
 
                 </div>
-                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
+                <div className="w-1/3 lg:w-1/5 m-3 grid justify-items-center relative shortcut">
                     <a target="_blank" href="https://www.json.org">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-9">
                         <Image
@@ -90,9 +90,9 @@ export default function Techstack(){
                 </div>
             </div>
             {/* <h2 className="text-4xl md:text-7xl my-10">Backend frameworks</h2>  */}
-            <div className="flex flex-wrap md:flex-nowrap justify-center">
+            <div className="flex flex-wrap lg:flex-nowrap justify-center">
                    
-                <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center relative shortcut">
+            <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
                     <a target="_blank" href="https://nodejs.org">    
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-9">
                         <Image
@@ -113,7 +113,7 @@ export default function Techstack(){
                     </a>
                     <p className="text-2xl md:text-4xl">Node.js</p>
                 </div>
-                <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center relative shortcut">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
                     <a target="_blank" href="htpps://expressjs.com">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-9">
                         <Image
@@ -132,7 +132,7 @@ export default function Techstack(){
                     </a>
                     <p className="text-2xl md:text-4xl">Express.js</p>
                 </div>
-                <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center relative shortcut">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
                     <a target="_blank" href="https://www.djangoproject.com">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-9">
                         <Image
@@ -153,7 +153,7 @@ export default function Techstack(){
                     </a>
                     <p className="text-2xl md:text-4xl">Django</p>
                 </div>
-                 <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center relative shortcut">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
                     <a target="_blank" href="https://www.mongodb.com">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-9">
                         <Image
@@ -172,7 +172,7 @@ export default function Techstack(){
                     </a>
                     <p className="text-2xl md:text-4xl">MongoDB</p>
                 </div>
-                <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center relative shortcut">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
                     <a target="_blank" href="https://mongoosejs.com">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-9">
                         <Image
@@ -191,7 +191,7 @@ export default function Techstack(){
                     </a>
                     <p className="text-2xl md:text-4xl">Mongoose</p>
                 </div>
-                <div className="w-1/3 md:w-1/6 m-3 grid justify-items-center relative shortcut">
+                <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
                     <a target="_blank" href="https://www.javascript.com/">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-9">
                         <Image
@@ -212,7 +212,7 @@ export default function Techstack(){
                 </div>
             </div>
             {/* <h2 className="text-4xl md:text-7xl my-10">React</h2>  */}
-            <div className="flex flex-wrap flex-wrap md:flex-nowrap justify-center">
+            <div className="flex flex-wrap lg:flex-nowrap justify-center">
                    
                 <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
                     <a target="_blank" href="https://www.javascript.com/">

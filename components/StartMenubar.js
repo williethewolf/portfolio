@@ -4,7 +4,7 @@ import w95Logo from "../public/images/w95/w95logo.svg"
 import Image from "next/image";
 
 
-export default function StartMenu(browserStatus, handleBrowserState, handleBrowserVis){
+export default function StartMenu ({browserStatus, handleBrowserState, handleBrowserVis}){
     const [showStartMenu, setShowStartMenu] = useState(false)
 
     //To show languages
@@ -15,11 +15,9 @@ export default function StartMenu(browserStatus, handleBrowserState, handleBrows
     const [showFilmMenu, setShowFilmMenu] = useState(false)
 
     function switchBrowserVis(){
-        handleBrowserVis
+        handleBrowserVis()
         console.log("im helping!")
     }
-
-    
 
     return (
         <div className=" bg-gray-300 flex justify-between relative text-xl">
@@ -37,9 +35,16 @@ export default function StartMenu(browserStatus, handleBrowserState, handleBrows
                 </button>
                 
                 {/* { browserStatus  ? ( */}
-                <button onClick={() =>{handleBrowserState("inactive")}}>
+                { browserStatus== "inactive" ?(
+                <button onClick={() =>{handleBrowserState("open")}}>
+                    <span className="taskbarItem p-2">Notscape Navigator</span>
+                </button>
+                ) : 
+                (
+                    <button onClick={() =>{handleBrowserState("inactive")}}>
                     <span className="taskbarItem selected p-2">Notscape Navigator</span>
                 </button>
+                )}
                 {/* ): (
                     browserStatus== "inactive" ?(
                         <button onClick={() =>  {handleBrowserVis}}>

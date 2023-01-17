@@ -1,9 +1,9 @@
 
 export default function IDE() {
     return (
-        <div className="font-mono text-xl w-100 md:w-full p-3 pb-10 md:px-10">
-            <h1 className="text-white p-2 md:p-5">RESUME</h1>
-            <container className="md:mx-20 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="font-mono text-xl w-100 lg:w-full p-3 pb-10 lg:px-10">
+            <h1 className="text-white p-2 lg:p-5">RESUME</h1>
+            <container className="lg:mx-20 grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div>  
                     <div>
                         <span className="text-purple-500">class </span><span className="text-yellow-400">Resume{' {'}</span>

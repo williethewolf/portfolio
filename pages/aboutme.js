@@ -9,32 +9,34 @@ export default function AboutMe() {
     //to calculate the width of the element and pass it later as props
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
-    const elementRef = useRef(null);
+    const sectionElementRef = useRef(null);
     //put ref in div ref={elementRef}
 
-    const [browserState, setBrowserState] = useState("open")
+    const [browserState, setBrowserState] = useState("inactive")
     const [browserVis, setBrowserVis] = useState(null)
     
     useEffect(() => {
         function handleResize() {
             // Set window width/height to state
-            setWidth(Math.trunc(elementRef.current.getBoundingClientRect().width));
-            setHeight(Math.trunc(elementRef.current.getBoundingClientRect().height));
+            setWidth(Math.trunc(sectionElementRef.current.getBoundingClientRect().width));
+            setHeight(Math.trunc(sectionElementRef.current.getBoundingClientRect().height));
         }
 
         window.addEventListener("resize", handleResize)
         handleResize()
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+        return () => {
+            window.removeEventListener("resize", handleResize)
+        }
+    }, [sectionElementRef]);
 
 
-    function handleBrowserState(state) {
+    const handleBrowserState = (state) => {
         setBrowserState(`${state}`)
     }
 
-    const handleBrowserVis = () => {
-        console.log("And I don't do shit!")
-        setBrowserVis(!browserVis)
+    const handleBrowserVis = (vis) => {
+        console.log("update visibility")
+        setBrowserVis(vis)
     }
 
     // useEffect(() =>{
@@ -65,11 +67,11 @@ export default function AboutMe() {
     
     return (
     <div className="w-full">
-        <section className="w-full win95" id="desktop"  ref={elementRef}>
+        <section className="w-full win95" id="desktop"  ref={sectionElementRef}>
             <BrowserWindow url="https://www.google.com"  width ={width} height= {height} browserVis={browserVis} handleBrowserState={handleBrowserState}/>
-            <div className=" mx-5 md:mb-14 md:mx-60 "><Techstack /></div>
+            <div className=" mx-5 md:mb-14 md:mx-30 xl:mx-60 "><Techstack /></div>
             <button  onClick={handleBrowserVis}>press here</button>
-        <StartMenu browserStatus={browserState} handleBrowserState={handleBrowserState} handleBrowserVis={handleBrowserVis}/>
+            <StartMenu browserStatus={browserState} handleBrowserState={handleBrowserState} handleBrowserVis={handleBrowserVis}/>
             
         </section>
         
