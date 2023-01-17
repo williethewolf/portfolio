@@ -61,10 +61,21 @@ export default function BrowserWindow({url, browserVis, handleBrowserState, heig
     }
   
     const selectNext = () => {
-      const currentIndex = websites.indexOf(selectedWebsite);
+      console.log("pressed select next")
+      const currentWebsite = websites.find(website => website === selectedWebsite);
+      const currentIndex = websites.indexOf(currentWebsite);
       const nextIndex = currentIndex === websites.length - 1 ? 0 : currentIndex + 1;
-      setSelectedWebsite(websites[nextIndex].selector);
+      setSelectedWebsite(websites[nextIndex]);
     }
+
+    const selectPrevious = () => {
+      console.log("pressed select previous");
+      const currentWebsite = websites.find(website => website === selectedWebsite);
+      const currentIndex = websites.indexOf(currentWebsite);
+      const prevIndex = currentIndex === 0 ? websites.length - 1 : currentIndex - 1;
+      setSelectedWebsite(websites[prevIndex]);
+    }
+
     useEffect(() => {
       handleWebsiteChange
     }, [selectedWebsite]);
@@ -87,14 +98,14 @@ export default function BrowserWindow({url, browserVis, handleBrowserState, heig
         </div>
         </section>
         <section className="flex flex-wrap bg-gray-300 p-1">
-        <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center"><button className=""><p>🢦</p><p>Back</p></button></div>
-        <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center"><button className=""  onClick={() =>{selectNext}}><p>➪</p><p>Forward</p></button></div>
-        <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center"><button className=""><p>↺</p><p>Reload</p></button></div>
-        <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center"><button className=""><p>🔍</p><p>Search</p></button></div>
+        <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center"><button className="" onClick={selectPrevious}><p>🢦</p><p>Back</p></button></div>
+        <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center"><button className="" onClick={selectNext}><p>➪</p><p>Forward</p></button></div>
+        <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center"><button className="disabled:opacity-25" disabled><p>↺</p><p>Reload</p></button></div>
+        <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center"><button className="disabled:opacity-25" disabled><p>🔍</p><p>Search</p></button></div>
         {/* <button className="p-2">Guide</button>
         <button className="p-2">Print</button>
         <button className="p-2">Security</button> */}
-        <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center"><button className="p-2"><p>🛑</p><p>Stop</p></button></div>
+        <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center"><button className="p-2 disabled:opacity-25" disabled><p>🛑</p><p>Stop</p></button></div>
 
 
         </section>
