@@ -14,8 +14,8 @@ export default function Projects() {
     }}>
         <div className="w-full"><h1 className="mb-12 p-4 text-5xl md:text-8xl text-white bg-black">Projects</h1></div>
         <section className="grid grid-cols-1 lg:grid-cols-3 mx-5 md:ml-10 pb-10 gap-10 content-center">
-            {projectsArr.map((project) =>(
-                <ProjectCard {...project}/>
+            {projectsArr.map((project, index) =>(
+                <ProjectCard key={index} {...project} index={index}/>
             ))}
         </section>
     </div>

@@ -1,5 +1,5 @@
 export default function ProjectCard({name,thumbnail,description,url, index, languageAPI}) {
-    console.log(languageAPI)
+    //console.log(languageAPI)
   return (
     <div key={index} className="max-w-m bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 place-content-center">
         {/* Working on adding language usage from the Git hub API */}
