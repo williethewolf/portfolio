@@ -23,7 +23,7 @@ export default function Clock () {
 
     return (
         <>    
-            <span className="px-3 inline-block align-middle">{time}</span>
+            <span className="px-1 lg:px-3 text-sm lg:text-xl inline-block align-middle">{time}</span>
         </>
     )
     };

@@ -23,7 +23,7 @@ export default function StartMenu ({browserStatus, handleBrowserState, handleBro
         <div className=" bg-gray-300 flex justify-between relative text-xl">
                 <div> 
                 <button onClick={() => {setShowStartMenu(!showStartMenu)}} className="w95StartButton p-1">
-                    <div className="border border-dashed border-gray-400 ">
+                    <div className="text-lg lg:text-xl border border-dashed border-gray-400 ">
                         <Image
                         src= {w95Logo}
                         width="15%"
@@ -37,13 +37,15 @@ export default function StartMenu ({browserStatus, handleBrowserState, handleBro
                 {/* { browserStatus  ? ( */}
                 { browserStatus== "inactive" ?(
                 <button onClick={() =>{handleBrowserState("open")}}>
-                    <span className="taskbarItem p-2">Notscape Navigator</span>
+                    <span className="text-lg lg:text-xl flex taskbarItem p-1 lg:p-1">Notscape Navigator</span>
                 </button>
                 ) : 
                 (
+                    browserStatus != "closed" ?(
                     <button onClick={() =>{handleBrowserState("inactive")}}>
                     <span className="taskbarItem selected p-2">Notscape Navigator</span>
                 </button>
+                    ) : (null)
                 )}
                 {/* ): (
                     browserStatus== "inactive" ?(
@@ -104,7 +106,7 @@ export default function StartMenu ({browserStatus, handleBrowserState, handleBro
                 </div>
                 ) : null}
                 <div className="border-2 border-gray-400">
-                <span className="px-3 inline-block align-middle">{langSelected}</span><Clock/>
+                <span className="px-1 lg:px-3 inline-block align-middle text-sm lg:text-xl">{langSelected}</span><Clock/>
                 </div>
             </div>
     )

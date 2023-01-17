@@ -44,14 +44,16 @@ export default function BrowserWindow({url, browserVis, handleBrowserState, heig
         setWindowHeight(Math.trunc(browserElementRef.current.getBoundingClientRect().height));
       }
       }
-      window.addEventListener("resize", handleResize)
       window.addEventListener('load', handleResize)
+      window.addEventListener("resize", handleResize)
+      
       handleResize()
       return () => {
-        window.removeEventListener("resize", handleResize)
         window.removeEventListener('load', handleResize)
+        window.removeEventListener("resize", handleResize)
+        
       }
-    }, []);
+    }, [browserVis,width]);
 
     const handleWebsiteChange = (event) => {
       // console.log(event.target.options[event.target.selectedIndex])
