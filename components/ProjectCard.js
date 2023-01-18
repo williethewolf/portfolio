@@ -57,8 +57,23 @@ export default function ProjectCard({name,thumbnail,description,url, index}) {
         
         
         <div className=''>
-            <p className='text-xs place-content-left'>Languages used:</p>
+        <div class="relative py-1">
+            <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-b border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center">
+                <span class="bg-white px-4 text-sm text-gray-500">Languages</span>
+            </div>
+        </div>
           {progressBars}
+        </div>
+        <div class="relative py-1">
+            {/* <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-b border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center">
+                <span class="bg-white px-4 text-sm text-gray-500">Project card</span>
+            </div> */}
         </div>
         <a href={url}>
             <img className="shadow-xl" src={thumbnail} alt={name} />
