@@ -7,79 +7,51 @@ import greyBg from "../public/images/grey_bg.svg"
 export default function AboutBlurb(){
     return(
         <>
-<div className='w-full text-center bg-center' style={{
-      backgroundImage: `url(${aboutBg.src})`,
-      backgroundSize: 'cover'
-    }}>
-        {/* <h1 className="text-5xl md:text-7xl md:mr-20 flex flex-row-reverse"><p className="bg-white p-1">About me</p></h1> */}
-        <div className="" style={{
-      backgroundImage: `url(${greyBg.src})`,
-      backgroundSize: 'cover'}}> 
-        <h1 className="text-5xl md:text-8xl"><p className="p-1">About me</p></h1>
-        </div>
-    <div className="max-w-9xl mx-auto py-10">
-
-        <div className="flex justify-center gap-20 flex-wrap">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm my-10">
-                <a href="#!">
-                <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
-                </a>
-                <div className="p-6">
-                <h5 className="text-gray-900 text-xl font-medium mb-2">Maker</h5>
-                <p className="text-gray-700 text-base mb-4">
-                Through the power of creation, I bring ideas to fruition. From a spark of inspiration all the way to a finished work. Any kind of content you can think of, I can make it happen. I want to see your vision become its best reality. Hablamos Español.
-                </p>
-                <button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
-                </div>
-            </div>
-            <div className="rounded-lg shadow-lg bg-white max-w-lg">
-                <a href="#!">
-                <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
-                </a>
-                <div className="p-6">
-                <h5 className="text-gray-900 text-xl font-medium mb-2">Hackerman</h5>
-                <p className="text-gray-700 text-base mb-4">
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                </p>
-                <button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
-                </div>
-            </div>
-            <div className="rounded-lg shadow-lg bg-white max-w-sm my-10">
-                <a href="#!">
-                <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
-                </a>
-                <div className="p-6">
-                <h5 className="text-gray-900 text-xl font-medium mb-2">Tinkerer</h5>
-                <p className="text-gray-700 text-base mb-4">
-                Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                </p>
-                <button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<div className="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700 w-3/4 m-auto mt-10 text-lg text-justify">
+    <p>
+        As a software developer with a background in film, media content, and advertising,
+        I bring a unique blend of creativity and technical expertise to the field. 
+        My experience in film production, including creating pitch decks and sizzle reels, 
+        paired with my passion for software engineering, has allowed me to excel in projects
+        that blend entertainment and technology.
+    </p>
+    <br />
+    <p> 
+        With hands-on experience in web development using JavaScript and Python, 
+        and proficiency in various frameworks and libraries such as React, Django, 
+        Express, MongoDB, and PSQL, I am confident in my ability to create and manage 
+        projects from start to finish. My early experience in QBasic and HTML, as well 
+        as my more recent work with Unity 3D, VR, and AI showcases my adaptability 
+        and aptitude for learning new technologies.
+    </p>
+    <br />
+    <p> 
+        In addition to my technical skills, I bring strong research abilities, a 
+        willingness to take on new challenges, and excellent organizational and computer 
+        skills. As a fluent speaker of English and Spanish, and a fast learner of new 
+        languages, I am well-suited to work in diverse, international teams.
+    </p>
+    <br />
+    <p>
+        My experience managing a retail business for 8 years has also honed my leadership 
+        and management skills and a focus on delivering results.
+  </p>
+  <hr className="my-6 border-gray-300" />
+    <p>
+        Currently, I am working on and learning about AI projects and training models using 
+        python, and I’m eager to apply my skills and knowledge to the right company to help 
+        bring innovative and engaging projects to life.
+    </p>
+    <div className="text-center">
+  <button
+    type="button"
+    className="inline-block px-6 py-2.5 mt-4 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+    data-mdb-ripple="true"
+    data-mdb-ripple-color="light"
+  >
+    Visit my Github
+  </button>
+  </div>
 </div>
         </>
     )

@@ -2,7 +2,12 @@ import Techstack from "../components/techstack";
 import StartMenu from "../components/StartMenubar";
 import BrowserWindow from "../components/BrowserWindow";
 import React, {useState, useEffect, useRef} from 'react';
-import AboutBlurb from "../components/AboutBlurb";
+import AboutCards from "../components/AboutCards";
+
+//webbrowser "sites" imports
+import IMDB from "../public/images/webmockups/IMDB.png"
+import WWWEB from "../public/images/webmockups/WWWEB.png"
+import YTREEL from "../public/images/webmockups/YTREEL.png"
 
 
 export default function AboutMe() {
@@ -12,8 +17,26 @@ export default function AboutMe() {
     const sectionElementRef = useRef(null);
     //put ref in div ref={elementRef}
 
+    //browser windows controls
     const [browserState, setBrowserState] = useState("inactive")
     const [browserVis, setBrowserVis] = useState(null)
+    const [websites, setWebsites] = useState([{selector:IMDB,url:"https://www.imdb.me/williamwolffe", name:"IMDB"}, 
+                                              {selector:WWWEB,url:"https://www.williamwolffe.com", name:"WW Website"},
+                                              {selector:YTREEL,url:"https://www.youtube.com/watch?v=xisUtskB8WI", name:"Reel"}
+                                            ]);
+    const [selectedWebsite, setSelectedWebsite] = useState(websites[0])
+
+    const handleWebsiteChange = (event) => {
+        console.log(JSON.parse(event.target.options[event.target.selectedIndex].value))
+        setSelectedWebsite(JSON.parse(event.target.options[event.target.selectedIndex].value));
+        console.log("the selected website " + selectedWebsite)
+      }
+      useEffect(() => {
+        handleWebsiteChange
+      }, [selectedWebsite]);  
+    //language Window controls
+    const [langWindowVis, setLangWindowVis] = useState(false)
+    const [langSelected, setSelectedLang] = useState("EN")
     
     useEffect(() => {
         function handleResize() {
@@ -30,33 +53,27 @@ export default function AboutMe() {
     }, [sectionElementRef]);
 
 
-    const handleBrowserState = (state) => {
-        setBrowserState(`${state}`)
-    }
+    // const handleBrowserState = (state) => {
+    //     setBrowserState(`${state}`)
+    // }
 
-    const handleBrowserVis = (vis) => {
-        console.log("update visibility")
-        setBrowserVis(vis)
-    }
+    // const handleBrowserVis = (vis) => {
+    //     //console.log("update visibility")
+    //     setBrowserVis(vis)
+    // }
 
-    // useEffect(() =>{
-    //     handleBrowserState()
-    // },[])
 
     useEffect(() => {
     function updateVis(){
         if (browserState == "open"){
             setBrowserVis(true)
-            //setBrowserState("closed")
             
         }
         else if(browserState == "inactive"){
             setBrowserVis(false)
-            //setBrowserState("open")
         }
         else{
             setBrowserVis(false)
-            //setBrowserState("open")
         }
     }
     updateVis()
@@ -67,11 +84,10 @@ export default function AboutMe() {
     
     return (
     <div className="w-full">
-        <section className="w-full win95" id="desktop"  ref={sectionElementRef}>
-            <BrowserWindow url="https://www.google.com"  width ={width} height= {height} browserVis={browserVis} handleBrowserState={handleBrowserState}/>
+        <section className="w-full win95 relative" id="desktop"  ref={sectionElementRef} >
+            <BrowserWindow width={width} height={height} browserVis={browserVis} setBrowserState={setBrowserState} websites={websites} setWebsites={setWebsites} selectedWebsite={selectedWebsite} setSelectedWebsite={setSelectedWebsite} handleWebsiteChange={handleWebsiteChange}/>
             <div className=" mx-5 md:mb-14 md:mx-30 xl:mx-60 "><Techstack /></div>
-            <button  onClick={handleBrowserVis}>press here</button>
-            <StartMenu browserStatus={browserState} handleBrowserState={handleBrowserState} handleBrowserVis={handleBrowserVis}/>
+            <StartMenu width={width} height={height} langWindowVis={langWindowVis} setLangWindowVis={setLangWindowVis} langSelected={langSelected} browserState={browserState} setBrowserState={setBrowserState} websites={websites} setWebsites={setWebsites} selectedWebsite={selectedWebsite} setSelectedWebsite={setSelectedWebsite} handleWebsiteChange={handleWebsiteChange}/>
             
         </section>
         
@@ -81,7 +97,7 @@ export default function AboutMe() {
                 
             </div>
             <div className="">
-            <AboutBlurb/>            
+            <AboutCards/>            
 
             </div>
         </section>
