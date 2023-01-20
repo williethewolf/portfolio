@@ -81,6 +81,10 @@ img {
   cursor: url("/images/w95/w95cursor.png"), default;
 }
 
+.w95StartMenuEle button{
+  cursor: url("/images/w95/w95cursor.png"), default;
+}
+
 .w95StartMenuEle:hover{
   cursor: url("/images/w95/w95cursor.png"), default;
   @apply bg-gray-500 
@@ -121,5 +125,5 @@ position: relative;
 }
 
 .progressbar-progress {
-  height: 1rem !important;
+  height: 1.2rem !important;
 }
