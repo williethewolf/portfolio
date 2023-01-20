@@ -77,5 +77,16 @@ export default [
     url: "https://github.com/williethewolf/Landscaper-clicker-minigame/",
     languages: getLanguages("https://github.com/williethewolf/Landscaper-clicker-minigame/")
   },
+  {
+    name:
+      "Willie 8A portfolio",
+    thumbnail: "https://user-images.githubusercontent.com/74451917/213058037-869510e4-1793-4cc8-8519-e51aef5e6de5.png",
+    description:
+    <div>
+    <p>This website/portfolio developed in React and NextJS</p>
+    </div>,
+    url: "https://github.com/williethewolf/portfolio/",
+    languages: getLanguages("https://github.com/williethewolf/portfolio/")
+  },
   
 ];
