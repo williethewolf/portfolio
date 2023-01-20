@@ -4,20 +4,95 @@ import w95Logo from "../public/images/w95/w95logo.svg"
 import Image from "next/image";
 
 
-export default function StartMenu ({browserStatus, handleBrowserState, handleBrowserVis}){
+export default function StartMenu ({browserState, setBrowserState, langSelected, setLangWindow, websites, selectedWebsite, setSelectedWebsite, handleWebsiteChange}){
     const [showStartMenu, setShowStartMenu] = useState(false)
-
-    //To show languages
+    
+    //StartMenu submenus
     const [showLangMenu, setShowLangMenu] = useState(false)
-    const [langSelected, setSelectedLang] = useState("EN")
-    const [showLangWindow, setShowLangWindow] = useState(false)
-
     const [showFilmMenu, setShowFilmMenu] = useState(false)
 
-    function switchBrowserVis(){
-        handleBrowserVis()
-        console.log("im helping!")
+  
+    const IMDBStartMenuButton = () => {
+            return (
+                <li className="w95StartMenuEle w-100 px-4 py-2">
+            <button onClick={() => {
+                browserState === "inactive" ?
+                setBrowserState("open") && setSelectedWebsite(websites[0]) 
+                : selectedWebsite === websites[0] ?
+                    setBrowserState("inactive") : setSelectedWebsite(websites[0]);
+            }}>
+                <span>IMDB</span>
+            </button>
+        </li>
+            )
+                
     }
+    const YTREELtartMenuButton = () => {
+        return (
+            <li className="w95StartMenuEle w-100 px-4 py-2">
+        <button onClick={() => {
+            browserState === "inactive" ?
+            setBrowserState("open") && setSelectedWebsite(websites[1]) 
+            : selectedWebsite === websites[1] ?
+                setBrowserState("inactive") : setSelectedWebsite(websites[1]);
+        }}>
+            <span>Reel</span>
+        </button>
+    </li>
+        )
+    }
+    const WWWEBStartMenuButton = () => {
+        return (
+            <li className="w95StartMenuEle w-100 px-4 py-2">
+        <button onClick={() => {
+            browserState === "inactive" ?
+            setBrowserState("open") && setSelectedWebsite(websites[2]) 
+            : selectedWebsite === websites[2] ?
+                setBrowserState("inactive") : setSelectedWebsite(websites[2]);
+        }}>
+            <span>WW Web</span>
+        </button>
+    </li>
+        )
+    }
+
+    const Browsertaskbarbutton = () => {
+        if (browserState == "inactive"){
+            return (
+                <button onClick={() =>{setBrowserState("open")}}>
+                    <span className="text-lg lg:text-xl flex taskbarItem p-1 lg:p-1 w95StartMenuEle">Notscape Navigator</span>
+                </button>
+                )
+        }
+        else if ( browserState== "open"){
+            return (<button onClick={() =>{setBrowserState("inactive")}}>
+            <span className="taskbarItem selected p-2 w95StartMenuEle">Notscape Navigator</span>
+        </button>
+            )
+        }
+        else return null
+    }
+
+    const Languagestaskbarbutton = () => {
+        if (languagesWindowState == "inactive"){
+            return (
+                <button onClick={() =>{setBrowserState("open")}}>
+                    <span className="text-lg lg:text-xl flex taskbarItem p-1 lg:p-1">language</span>
+                </button>
+                )
+        }
+        else if ( languagesWindowState== "open"){
+            return (<button onClick={() =>{setBrowserState("inactive")}}>
+            <span className="taskbarItem selected p-2">language</span>
+        </button>
+            )
+        }
+        else return null
+    }
+
+    // const disableLinks={
+    //     pointer-events: 'none';
+    // }
 
     return (
         <div className=" bg-gray-300 flex justify-between relative text-xl">
@@ -33,33 +108,9 @@ export default function StartMenu ({browserStatus, handleBrowserState, handleBro
                         &nbsp;Start
                     </div>
                 </button>
-                
-                {/* { browserStatus  ? ( */}
-                { browserStatus== "inactive" ?(
-                <button onClick={() =>{handleBrowserState("open")}}>
-                    <span className="text-lg lg:text-xl flex taskbarItem p-1 lg:p-1">Notscape Navigator</span>
-                </button>
-                ) : 
-                (
-                    browserStatus != "closed" ?(
-                    <button onClick={() =>{handleBrowserState("inactive")}}>
-                    <span className="taskbarItem selected p-2">Notscape Navigator</span>
-                </button>
-                    ) : (null)
-                )}
-                {/* ): (
-                    browserStatus== "inactive" ?(
-                        <button onClick={() =>  {handleBrowserVis}}>
-                        <span className="taskbarItem p-2">Notscape Navigator</span>
-                        </button>
-                    ):null
-                
-                )
-            } */}
-
-                
-
-
+                {Browsertaskbarbutton()}
+                {/* enable later when implemented */}
+                {/* {Languagestaskbarbutton()} */}
                 </div>
                 { showStartMenu ? (
                 <div className="w95StartMenu grid grid-cols-5">
@@ -71,7 +122,7 @@ export default function StartMenu ({browserStatus, handleBrowserState, handleBro
                             <li className="px-4 py-2 w95StartMenuEle" 
                                 onMouseEnter={() => setShowLangMenu(true)}
                                 onMouseLeave={() => setShowLangMenu(false)}>
-                                    <div className="w-full"><span className="pr-4">Spoken Languages</span>  	<span className="absolute right-0">➤</span></div>
+                                    <div className="w-full"><span className="pr-4">Spoken Languages</span><span className="absolute right-0">➤</span></div>
                                     { showLangMenu ? (
                             <ul className=" bg-gray-300 w95StartSubMenu  top-0">
                                 <li className="w95StartMenuEle w-100 px-4 py-2">English</li>
@@ -82,25 +133,29 @@ export default function StartMenu ({browserStatus, handleBrowserState, handleBro
                             </ul>
                                     ) : null}
                             </li>
-                            <li className="px-4 py-2 w95StartMenuEle"
+                            <li className="pl-4 py-2 w95StartMenuEle"
                              onMouseEnter={() => setShowFilmMenu(true)}
                              onMouseLeave={() => setShowFilmMenu(false)}>
-                                <div className="w-full"><span href="#">Film Background 	<span className="absolute right-0">➤</span></span></div>
+                                <div className="w-full"><span className="w-full">Film Background&nbsp;&nbsp;&nbsp;<span className="absolute right-0">➤</span></span></div>
                                     { showFilmMenu ? (
                             
                             <ul className=" bg-gray-300 w95StartSubMenu top-14">
-                                <a target="_blank" href="http://imdb.me/williamwolffe"><li className="w95StartMenuEle w-100 px-4 py-2">IMDB</li></a>
-                                <li className="w95StartMenuEle px-4 py-2">Reel</li>
-                                <li className="w95StartMenuEle px-4 py-2">Website</li>
+                                {IMDBStartMenuButton()}
+                                {YTREELtartMenuButton()}
+                                {WWWEBStartMenuButton()}
 
                             </ul>
                                 ) : null}
                             </li>
-                            <li className="px-4 py-2 w95StartMenuEle"><a href="#">Other Projects	<span className="absolute right-0">➤</span></a></li>
+                            <div 
+                            // className='hidden'
+                            >
+                            <li className="px-4 py-2 w95StartMenuEle"><a href="#" >Other Projects	<span className="absolute right-0">➤</span></a></li>
                             <li className="px-4 py-2 w95StartMenuEle"><a href="#">Games 	<span className="absolute right-0">➤</span></a></li>
                             <hr />
                             <li className="px-4 py-2 w95StartMenuEle"><a href="#">Pitch Decks</a></li>
                             <li className="px-4 py-2 w95StartMenuEle"><a href="#">Emergencies Only</a></li>
+                            </div>
                         </ul>
                     </div>
                 </div>
