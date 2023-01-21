@@ -150,11 +150,11 @@ export default function StartMenu ({browserState, setBrowserState, langSelected,
                             <div 
                             // className='hidden'
                             >
-                            <li className="px-4 py-2 w95StartMenuEle"><a href="#" >Other Projects	<span className="absolute right-0">➤</span></a></li>
-                            <li className="px-4 py-2 w95StartMenuEle"><a href="#">Games 	<span className="absolute right-0">➤</span></a></li>
+                            <li className="px-4 py-2 w95StartMenuEle"><a href="#" className="opacity-50 cursor-not-allowed" style={{pointerEvents: 'none'}}>Other Projects	<span className="absolute right-0">➤</span></a></li>
+                            <li className="px-4 py-2 w95StartMenuEle"><a href="#" className="opacity-50 cursor-not-allowed" style={{pointerEvents: 'none'}}>Games 	<span className="absolute right-0">➤</span></a></li>
                             <hr />
-                            <li className="px-4 py-2 w95StartMenuEle"><a href="#">Pitch Decks</a></li>
-                            <li className="px-4 py-2 w95StartMenuEle"><a href="#">Emergencies Only</a></li>
+                            <li className="px-4 py-2 w95StartMenuEle"><a href="http://williamwolffe.com/pitch/" target="_blank">Pitch Decks</a></li>
+                            <li className="px-4 py-2 w95StartMenuEle"><a href="https://stackoverflow.com/search?q=How+to+program+good" target="_blank">Emergencies Only</a></li>
                             </div>
                         </ul>
                     </div>
