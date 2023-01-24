@@ -4,7 +4,7 @@ import w95Logo from "../public/images/w95/w95logo.svg"
 import Image from "next/image";
 
 
-export default function StartMenu ({browserState, setBrowserState, langSelected, setLangWindow, websites, selectedWebsite, setSelectedWebsite, handleWebsiteChange}){
+export default function StartMenu ({width, browserState, setBrowserState, langWindowState, langSelected, setlangWindowState, websites, selectedWebsite, setSelectedWebsite, handleWebsiteChange}){
     const [showStartMenu, setShowStartMenu] = useState(false)
     
     //StartMenu submenus
@@ -55,6 +55,60 @@ export default function StartMenu ({browserState, setBrowserState, langSelected,
     </li>
         )
     }
+    const EnglishStartMenuButton = () => {
+        return (
+            <li className="w95StartMenuEle w-100 px-4 py-2">
+                <button onClick={() => {
+                        langWindowState === "inactive" || langWindowState === "closed"  ?
+                        setlangWindowState("open") 
+                        : setlangWindowState("inactive")
+                    }}>
+                    <span>English</span>
+                </button>
+            </li>
+        )
+    }
+    const SpanishStartMenuButton = () => {
+        return (
+            <li className="w95StartMenuEle w-100 px-4 py-2">
+                <button onClick={() => {
+                        langWindowState === "inactive" || langWindowState === "closed"  ?
+                        setlangWindowState("open") 
+                        : setlangWindowState("inactive")
+                    }}>
+                    <span>Spanish</span>
+                </button>
+            </li>
+        )
+    }
+    const ItalianStartMenuButton = () => {
+        return (
+            <li className="w95StartMenuEle w-100 px-4 py-2">
+                <button onClick={() => {
+                        langWindowState === "inactive" || langWindowState === "closed"  ?
+                        setlangWindowState("open") 
+                        : setlangWindowState("inactive")
+                    }}>
+                    <span>Italian</span>
+                </button>
+            </li>
+        )
+    }
+    const FrenchStartMenuButton = () => {
+        return (
+            <li className="w95StartMenuEle w-100 px-4 py-2">
+                <button onClick={() => {
+                        langWindowState === "inactive" || langWindowState === "closed"  ?
+                        setlangWindowState("open") 
+                        : setlangWindowState("inactive")
+                    }}>
+                    <span>French</span>
+                </button>
+            </li>
+        )
+    }
+
+    
 
     const Browsertaskbarbutton = () => {
         if (browserState == "inactive"){
@@ -66,7 +120,7 @@ export default function StartMenu ({browserState, setBrowserState, langSelected,
         }
         else if ( browserState== "open"){
             return (<button onClick={() =>{setBrowserState("inactive")}}>
-            <span className="taskbarItem selected p-2 w95StartMenuEle">Notscape Navigator</span>
+            <span className="text-lg taskbarItem selected p-2 w95StartMenuEle">Notscape Navigator</span>
         </button>
             )
         }
@@ -74,20 +128,22 @@ export default function StartMenu ({browserState, setBrowserState, langSelected,
     }
 
     const Languagestaskbarbutton = () => {
-        if (languagesWindowState == "inactive"){
+        if (width>500){
+        if (langWindowState == "inactive"){
             return (
-                <button onClick={() =>{setBrowserState("open")}}>
+                <button onClick={() =>{setlangWindowState("open")}}>
                     <span className="text-lg lg:text-xl flex taskbarItem p-1 lg:p-1">language</span>
                 </button>
                 )
         }
-        else if ( languagesWindowState== "open"){
-            return (<button onClick={() =>{setBrowserState("inactive")}}>
+        else if ( langWindowState== "open"){
+            return (<button onClick={() =>{setlangWindowState("inactive")}}>
             <span className="taskbarItem selected p-2">language</span>
         </button>
             )
         }
         else return null
+    }
     }
 
     // const disableLinks={
@@ -110,7 +166,7 @@ export default function StartMenu ({browserState, setBrowserState, langSelected,
                 </button>
                 {Browsertaskbarbutton()}
                 {/* enable later when implemented */}
-                {/* {Languagestaskbarbutton()} */}
+                {Languagestaskbarbutton()}
                 </div>
                 { showStartMenu ? (
                 <div className="w95StartMenu grid grid-cols-5">
@@ -125,11 +181,10 @@ export default function StartMenu ({browserState, setBrowserState, langSelected,
                                     <div className="w-full"><span className="pr-4">Spoken Languages</span><span className="absolute right-0">➤</span></div>
                                     { showLangMenu ? (
                             <ul className=" bg-gray-300 w95StartSubMenu  top-0">
-                                <li className="w95StartMenuEle w-100 px-4 py-2">English</li>
-                                <li className="w95StartMenuEle px-4 py-2">Spanish</li>
-                                <li className="w95StartMenuEle px-4 py-2">Italian</li>
-                                <li className="w95StartMenuEle px-4 py-2">French</li>
-
+                                {EnglishStartMenuButton()}
+                                {SpanishStartMenuButton()}
+                                {ItalianStartMenuButton()}
+                                {FrenchStartMenuButton()}
                             </ul>
                                     ) : null}
                             </li>
