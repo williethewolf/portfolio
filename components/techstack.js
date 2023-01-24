@@ -26,7 +26,7 @@ import bo from "../public/images/techstack_icons/bootstrap.svg"
 //Links/shortcuts requiring double click
 export default function Techstack(){
     return(
-        <container className="">
+        <section className="">
             <h2 className="text-4xl md:text-7xl py-10">Tech Stack</h2> 
             <div className="flex flex-wrap justify-center">
                    
@@ -192,7 +192,7 @@ export default function Techstack(){
                     <p className="text-2xl md:text-4xl">Mongoose</p>
                 </div>
                 <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
-                    <a target="_blank" href="https://www.javascript.com/">
+                    <a target="_blank" href="https://www.postgresql.org">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-9">
                         <Image
                             src= {scArrow}
@@ -215,7 +215,7 @@ export default function Techstack(){
             <div className="flex flex-wrap lg:flex-nowrap justify-center">
                    
                 <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
-                    <a target="_blank" href="https://www.javascript.com/">
+                    <a target="_blank" href="https://reactjs.org">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-16">
                         <Image
                             src= {scArrow}
@@ -234,7 +234,7 @@ export default function Techstack(){
                     <p className="text-2xl md:text-4xl">React</p>
                 </div>
                 <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
-                    <a target="_blank" href="https://www.javascript.com/">
+                    <a target="_blank" href="https://nextjs.org">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-16">
                         <Image
                             src= {scArrow}
@@ -254,7 +254,7 @@ export default function Techstack(){
                 </div>
                    
                 <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
-                    <a target="_blank" href="https://www.javascript.com/">
+                    <a target="_blank" href="https://tailwindcss.com">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-16">
                         <Image
                             src= {scArrow}
@@ -273,7 +273,7 @@ export default function Techstack(){
                     <p className="text-2xl md:text-4xl">Tailwind CSS</p>
                 </div>
                 <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
-                    <a target="_blank" href="https://www.javascript.com/">
+                    <a target="_blank" href="https://materializecss.com">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-16">
                         <Image
                             src= {scArrow}
@@ -292,7 +292,7 @@ export default function Techstack(){
                     <p className="text-2xl md:text-4xl">Materialize</p>
                 </div>
                 <div className="w-1/3 md:w-1/5 m-3 grid justify-items-center relative shortcut">
-                    <a target="_blank" href="https://www.javascript.com/">
+                    <a target="_blank" href="https://getbootstrap.com">
                     <div className="absolute bg-white z-10 w-8 md:w-15 h-8 md:h-15  -left-1 md:left-5 bottom-7 md:bottom-16">
                         <Image
                             src= {scArrow}
@@ -312,6 +312,6 @@ export default function Techstack(){
                 </div>
             </div>
 
-        </container>
+        </section>
     )
 }
