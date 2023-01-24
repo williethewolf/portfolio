@@ -1,12 +1,14 @@
-//Bg imports
-import { useState } from "react";
-
-
-//Video Imports
+import { useState, useEffect } from "react";
 
 export default function AboutBlurb({width}){
     
     const [isHidden, setIsHidden] = useState(false);
+
+    useEffect( ()=>{
+        width < 500 ?
+        setIsHidden(true):
+        setIsHidden(false)
+        },[width])
     
     return(
         <>
