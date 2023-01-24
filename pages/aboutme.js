@@ -1,8 +1,12 @@
+import React, {useState, useEffect, useRef} from 'react';
+//components
 import Techstack from "../components/techstack";
 import StartMenu from "../components/StartMenubar";
-import BrowserWindow from "../components/BrowserWindow";
-import React, {useState, useEffect, useRef} from 'react';
 import AboutCards from "../components/AboutCards";
+//Mockwindows
+import BrowserWindow from "../components/BrowserWindow";
+import LanguageWindow from "../components/LanguageWindow"
+
 
 //webbrowser "sites" imports
 import IMDB from "../public/images/webmockups/IMDB.png"
@@ -35,6 +39,7 @@ export default function AboutMe() {
         handleWebsiteChange
       }, [selectedWebsite]);  
     //language Window controls
+    const [langWindowState, setlangWindowState] = useState("closed")
     const [langWindowVis, setLangWindowVis] = useState(false)
     const [langSelected, setSelectedLang] = useState("EN")
     
@@ -52,17 +57,6 @@ export default function AboutMe() {
         }
     }, [sectionElementRef]);
 
-
-    // const handleBrowserState = (state) => {
-    //     setBrowserState(`${state}`)
-    // }
-
-    // const handleBrowserVis = (vis) => {
-    //     //console.log("update visibility")
-    //     setBrowserVis(vis)
-    // }
-
-
     useEffect(() => {
     function updateVis(){
         if (browserState == "open"){
@@ -78,6 +72,22 @@ export default function AboutMe() {
     }
     updateVis()
     }, [browserState]);
+    
+    useEffect(() => {
+    function updateLangVis(){
+        if (langWindowState == "open"){
+            setLangWindowVis(true)
+            
+        }
+        else if(langWindowState == "inactive"){
+            setLangWindowVis(false)
+        }
+        else{
+            setLangWindowVis(false)
+        }
+    }
+    updateLangVis()
+    }, [langWindowState]);
 
    
     
@@ -85,9 +95,10 @@ export default function AboutMe() {
     return (
     <div className="w-full">
         <section className="w-full win95 relative" id="desktop"  ref={sectionElementRef} >
+            <LanguageWindow langWindowVis={langWindowVis} setlangWindowState={setlangWindowState} setLangWindowVis={setLangWindowVis} langSelected={langSelected}/>
             <BrowserWindow width={width} height={height} browserVis={browserVis} setBrowserState={setBrowserState} websites={websites} setWebsites={setWebsites} selectedWebsite={selectedWebsite} setSelectedWebsite={setSelectedWebsite} handleWebsiteChange={handleWebsiteChange}/>
             <div className=" mx-5 md:mb-14 md:mx-30 xl:mx-60 "><Techstack /></div>
-            <StartMenu width={width} height={height} langWindowVis={langWindowVis} setLangWindowVis={setLangWindowVis} langSelected={langSelected} browserState={browserState} setBrowserState={setBrowserState} websites={websites} setWebsites={setWebsites} selectedWebsite={selectedWebsite} setSelectedWebsite={setSelectedWebsite} handleWebsiteChange={handleWebsiteChange}/>
+            <StartMenu width={width} height={height} langWindowVis={langWindowVis} setLangWindowVis={setLangWindowVis} langWindowState={langWindowState} setlangWindowState={setlangWindowState} langSelected={langSelected} browserState={browserState} setBrowserState={setBrowserState} websites={websites} setWebsites={setWebsites} selectedWebsite={selectedWebsite} setSelectedWebsite={setSelectedWebsite} handleWebsiteChange={handleWebsiteChange}/>
             
         </section>
         
@@ -97,7 +108,7 @@ export default function AboutMe() {
                 
             </div>
             <div className="">
-            <AboutCards/>            
+            <AboutCards width={width}/>            
 
             </div>
         </section>

@@ -5,7 +5,7 @@ import AboutBlurb from "./AboutBlurb"
 
 //Video Imports
 
-export default function AboutCards(){
+export default function AboutCards({width}){
     return(
         <>
 <div className='w-full text-center bg-center' style={{
@@ -18,7 +18,7 @@ export default function AboutCards(){
       backgroundSize: 'cover'}}> 
         <h1 className="text-5xl md:text-8xl"><p className="p-1">About me</p></h1>
         </div>
-        <AboutBlurb />
+        <AboutBlurb width={width} />
     <div className="max-w-9xl mx-auto py-10">
 
         <div className="flex justify-center gap-20 flex-wrap">
