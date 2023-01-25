@@ -50,8 +50,8 @@ export default function IDE() {
                                 </li>
                                 <li><span className="text-white">willieOchoa</span><span className="text-sky-300">.</span><span className="text-white">experience</span> <span className="text-sky-300">=</span> <span className="text-yellow-500">[</span>
                                     <ul className="indent-32 md:indent-52">
-                                        <li><a target="_blank" href="https://www.linkedin.com/in/willie-ochoa-675b35246/"><span className="text-yellow-400">Link</span><span className="text-white"> to </span><span className="text-purple-300 underline">Linkedin</span></a><span className="text-sky-300">, </span></li>
-                                        <li><a href="#"><span className="text-yellow-400">Link</span><span className="text-white"> to </span><span className="text-purple-300 underline">resume PDF</span></a><span className="text-sky-300"> </span></li>
+                                        <li><a target="_blank" href="https://www.linkedin.com/in/willie-ochoa"><span className="text-yellow-400">Link</span><span className="text-white"> to </span><span className="text-purple-300 underline">Linkedin</span></a><span className="text-sky-300">, </span></li>
+                                        <li><a href="https://drive.google.com/drive/folders/13fM1WqsZ2A4Tspg0k_gwvEHlsMrmNz2E?usp=share_link"><span className="text-yellow-400">Link</span><span className="text-white"> to </span><span className="text-purple-300 underline">resume</span></a><span className="text-sky-300"> </span></li>
                                         <li><span className="text-yellow-500">]</span></li>
                                     </ul>
                                 </li>
