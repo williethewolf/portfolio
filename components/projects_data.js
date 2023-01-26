@@ -45,7 +45,7 @@ export default [
   },
   {
     name:
-      "Kanboard",
+      "Kanbas",
     thumbnail: "https://github.com/williethewolf/Kanbas/raw/main/assets/Screenshot%202022-07-27%20004057.png",
     description:
     <p>A minimalistic Kanban based project manager full stack app.</p>,
