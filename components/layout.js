@@ -46,12 +46,10 @@ export default function Layout({ children, home }) {
             />
             <meta
                 //
-                // WHAT IS THIS?
+                // OpenGraph stuff to show the image of the wbsite on the preview links
                 //
                 name="og:image"
-                content={`https://og-image.vercel.app/${encodeURI(
-                    siteTitle,
-                  )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+                content={`https://user-images.githubusercontent.com/74451917/213058037-869510e4-1793-4cc8-8519-e51aef5e6de5.png`}
             />
             <meta name="og:title" content={siteTitle} />
             <meta name="twitter:card" content="sumary_large_image" />
