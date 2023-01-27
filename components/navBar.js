@@ -67,15 +67,23 @@ export default function Navbar() {
 const [isFullscreen, setIsFullscreen] = useState(false);
 
 // Watch for fullscreenchange
-useEffect(() => {
-  function onFullscreenChange() {
-    setIsFullscreen(Boolean(document.fullscreenElement));
-  }
-        
-  document.addEventListener('isFullscreen', onFullscreenChange);
+function toggleFullscreen() {
+    if (isFullscreen) {
+        document.exitFullscreen();
+    } else {
+        document.documentElement.requestFullscreen();
+    }
+}
 
-  return () => document.removeEventListener('isFullscreen', onFullscreenChange);
-}, []);
+useEffect(() => {
+    function onFullscreenChange() {
+      setIsFullscreen(Boolean(document.fullscreenElement));
+    }
+          
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+  
+    return () => document.removeEventListener('fullscreenchange', onFullscreenChange);
+  }, []);
 
     return (
         <>
@@ -109,7 +117,7 @@ useEffect(() => {
                             
                             <li className='hidden md:block pl-3'>
                                 <button className='hover:bg-stone-600 type="button" data-bs-toggle="collapse" data-bs-target="#IDE" aria-expanded="true" aria-controls="IDE" border px-2'>-</button>
-                                <button className="hover:bg-stone-600 border px-2" onClick={() => {setIsFullscreen(true)}}>□</button>
+                                <button className="hover:bg-stone-600 border px-2"  onClick={toggleFullscreen}>□</button>
                                 <button className="hover:bg-stone-600 border px-2" onClick={() => {setShowModal(true); audioToggle()}}>x</button>
                             </li>
                         </ul>
