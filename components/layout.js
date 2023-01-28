@@ -5,7 +5,10 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import ReactTypingEffect from 'react-typing-effect';
 
-import profilePic from "../public/images/wotempprofile2.jpg"
+import { useState } from 'react'
+
+import profilePic from "../public/images/woprofile.jpg"
+import altProfilePic from "../public/images/wotempprofile2.jpg"
 import profileBg from "../public/images/profilebg.png"
 import Terminal from '../pages/terminal'
 import Navbar from './navBar'
@@ -13,17 +16,24 @@ import Navbar from './navBar'
 const name = 'Willie 8A'
 export const siteTitle = 'Willie 8A - Hackerman'
 
-const ProfileImage = () => (
-    <Image
-      priority
-      src= {profilePic}
-      height={344}
-      width={344}
-      alt="Willie Ochoa"
-      placeholder="blur"
-      className={utilStyles.borderCircle}
-    />
-  )
+
+const ProfileImage = () => {
+    const [isHovering, setIsHovering] = useState(false)
+
+    return (
+        <Image
+          priority
+          src={isHovering ? altProfilePic : profilePic}
+          height={344}
+          width={344}
+          alt="Willie Ochoa"
+          placeholder="blur"
+          className={utilStyles.borderCircle}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        />
+    )
+}
 
   const BackgroundImage = () => (
     <Image
@@ -36,6 +46,7 @@ const ProfileImage = () => (
   )
 
 export default function Layout({ children, home }) {
+
     return (
     <div className="">
         <Head>
@@ -77,7 +88,7 @@ export default function Layout({ children, home }) {
                 <>
                 <Link href="/">
                     <a>
-                        <ProfileImage width={108} height={108}/>
+                    <ProfileImage isHovering={isHovering} setIsHovering={setIsHovering} width={108} height={108} />
                     </a>
                 </Link>
                 <h2 className={utilStyles.headingLg}>
