@@ -1,7 +1,13 @@
+import Image from 'next/image'
+
 //Bg imports
 import aboutBg from "../public/images/color_bg.svg"
 import greyBg from "../public/images/grey_bg.svg"
 import AboutBlurb from "./AboutBlurb"
+
+import HackermanPic from "../public/images/Hackerman.png"
+import Makerpic from "../public/images/Maker.png"
+import Tinkererpic from "../public/images/Tinkerer.png"
 
 //Video Imports
 
@@ -24,7 +30,14 @@ export default function AboutCards({width}){
         <div className="flex justify-center gap-20 flex-wrap">
             <div className="rounded-lg shadow-lg bg-white max-w-sm my-10">
                 <a href="#!">
-                <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+                <Image
+                src={Makerpic}
+                placeholder="blur"
+                objectFit='contain'
+                className="rounded-t-lg"
+                objectPosition='center'
+                />
+    {/* <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/> */}
                 </a>
                 <div className="p-6">
                 <h5 className="text-gray-900 text-2xl font-medium mb-2">Maker</h5>
@@ -42,7 +55,13 @@ export default function AboutCards({width}){
             </div>
             <div className="rounded-lg shadow-lg bg-white max-w-lg">
                 <a href="#!">
-                <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+                <Image
+                src={HackermanPic}
+                placeholder="blur"
+                objectFit='contain'
+                className="rounded-t-lg"
+                objectPosition='center'
+                />
                 </a>
                 <div className="p-6">
                 <h5 className="text-gray-900 text-2xl font-medium mb-2">Hackerman</h5>
@@ -60,7 +79,13 @@ export default function AboutCards({width}){
             </div>
             <div className="rounded-lg shadow-lg bg-white max-w-sm my-10">
                 <a href="#!">
-                <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+                <Image
+                src={Tinkererpic}
+                placeholder="blur"
+                objectFit='contain'
+                className="rounded-t-lg"
+                objectPosition='center'
+                />
                 </a>
                 <div className="p-6">
                 <h5 className="text-gray-900 text-2xl font-medium mb-2">Tinkerer</h5>
