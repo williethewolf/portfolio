@@ -17,35 +17,37 @@ const name = 'Willie 8A'
 export const siteTitle = 'Willie 8A - Hackerman'
 
 
-const ProfileImage = () => {
-    const [isHovering, setIsHovering] = useState(false)
 
-    return (
-        <Image
-          priority
-          src={isHovering ? altProfilePic : profilePic}
-          height={344}
-          width={344}
-          alt="Willie Ochoa"
-          placeholder="blur"
-          className={utilStyles.borderCircle}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-        />
-    )
-}
 
-  const BackgroundImage = () => (
-    <Image
-    src={profileBg}
-    layout="fill"
-    placeholder="blur"
-    objectFit='contain'
-    objectPosition='center'
-    />
-  )
+//   const BackgroundImage = () => (
+//     <Image
+//     src={profileBg}
+//     layout="fill"
+//     placeholder="blur"
+//     objectFit='contain'
+//     objectPosition='center'
+//     />
+//   )
 
 export default function Layout({ children, home }) {
+
+    const ProfileImage = () => {
+        const [isHovering, setIsHovering] = useState(false)
+    
+        return (
+            <Image
+              priority
+              src={isHovering ? altProfilePic : profilePic}
+              height={344}
+              width={344}
+              alt="Willie Ochoa"
+              placeholder="blur"
+              className={utilStyles.borderCircle}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            />
+        )
+    }
 
     return (
     <div className="">
