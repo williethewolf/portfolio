@@ -30,9 +30,10 @@ export const siteTitle = 'Willie 8A - Hackerman'
 //   )
 
 export default function Layout({ children, home }) {
+    const [isHovering, setIsHovering] = useState(false)
 
     const ProfileImage = () => {
-        const [isHovering, setIsHovering] = useState(false)
+        
     
         return (
             <Image
@@ -78,7 +79,7 @@ export default function Layout({ children, home }) {
     }}>
                         
                     <div className='my-5 md:my-20'>
-                        <div className=''><ProfileImage/></div>
+                        <div className=''><ProfileImage isHovering={isHovering} setIsHovering={setIsHovering} width={108} height={108} /></div>
                     </div>
                     <h1 className=" text-white text-6xl ochoa_logo mb-6 md:text-9xl stroked_text"><ReactTypingEffect text={name} speed = {100}  eraseDelay = {9999999999} eraseSpeed= {50} cursor={" "}/></h1>
                     </div>
