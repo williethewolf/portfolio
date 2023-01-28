@@ -108,7 +108,7 @@ useEffect(() => {
                             <li className='hover:bg-stone-600 pr-3 md:pr-4 flex'><a className="border md:border-0 border-stone-600 px-2" href="#projects">Projects</a></li>
                             <li className='hover:bg-stone-600 pr-3 md:pr-4 flex'><a className="border md:border-0 border-stone-600 px-2" href="#IDE">Resume</a></li>
                             <li className='hover:bg-stone-600 pr-3 md:pr-4 flex'><a className="border md:border-0 border-stone-600 px-2" href="#about">About</a></li>
-                            <li className='hover:bg-stone-600 pr-3 md:pr-4 flex'><a href="https://www.linkedin.com/in/willie-ochoa/">Contact</a></li>
+                            <li className='hover:bg-stone-600 pr-3 md:pr-4 flex'><a href="https://www.linkedin.com/in/willie-ochoa/" target="_blank">Contact</a></li>
                             {/* <li className='hover:bg-stone-600 pr-3 md:pr-4 flex'><a className="border md:border-0 border-stone-600 px-2">Blog</a></li> */}
                            
                         </ul>
