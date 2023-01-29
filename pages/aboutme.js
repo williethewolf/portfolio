@@ -45,7 +45,7 @@ export default function AboutMe() {
     const [langSelected, setSelectedLang] = useState("EN")
 
     //Insufficient RAM modal
-    const [RAMWindowVis, setRAMWindowVis] = useState(true)
+    const [RAMWindowVis, setRAMWindowVis] = useState(false)
     
     useEffect(() => {
         function handleResize() {
