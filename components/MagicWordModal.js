@@ -19,8 +19,8 @@ export default function MagicWordModal({audioToggle, setShowModal}){
                         <span className="pl-3">Magic_word.exe</span>
                         <ul className="flex justify-end">
                             <li className="">
-                                        <button className='bg-stone-300 px-2 hover:bg-stone-600 px-2'>-</button>
-                                        <button className="bg-stone-300 px-2 hover:bg-stone-600 px-2">□</button>
+                                        {/* <button className='bg-stone-300 px-2 hover:bg-stone-600 px-2'>-</button>
+                                        <button className="bg-stone-300 px-2 hover:bg-stone-600 px-2">□</button> */}
                                         <button className="bg-stone-300 px-2 hover:bg-stone-600 px-2 cancel" onClick={() => { audioToggle(); setShowModal(false) }}>x</button>
                             </li>
                         </ul>
