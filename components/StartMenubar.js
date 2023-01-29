@@ -16,6 +16,8 @@ export default function StartMenu ({width, browserState, setBrowserState, langWi
             return (
                 <li className="w95StartMenuEle w-100 px-4 py-2">
             <button onClick={() => {
+                setShowStartMenu(!showStartMenu)
+                setShowFilmMenu(false)
                 browserState === "inactive" ?
                 setBrowserState("open") && setSelectedWebsite(websites[0]) 
                 : selectedWebsite === websites[0] ?
@@ -31,10 +33,12 @@ export default function StartMenu ({width, browserState, setBrowserState, langWi
         return (
             <li className="w95StartMenuEle w-100 px-4 py-2">
         <button onClick={() => {
+            setShowStartMenu(!showStartMenu)
+            setShowFilmMenu(false)
             browserState === "inactive" ?
-            setBrowserState("open") && setSelectedWebsite(websites[1]) 
-            : selectedWebsite === websites[1] ?
-                setBrowserState("inactive") : setSelectedWebsite(websites[1]);
+            setBrowserState("open") && setSelectedWebsite(websites[2]) 
+            : selectedWebsite === websites[2] ?
+                setBrowserState("inactive") : setSelectedWebsite(websites[2]);
         }}>
             <span>Reel</span>
         </button>
@@ -45,10 +49,12 @@ export default function StartMenu ({width, browserState, setBrowserState, langWi
         return (
             <li className="w95StartMenuEle w-100 px-4 py-2">
         <button onClick={() => {
+            setShowStartMenu(!showStartMenu)
+            setShowFilmMenu(false)
             browserState === "inactive" ?
-            setBrowserState("open") && setSelectedWebsite(websites[2]) 
-            : selectedWebsite === websites[2] ?
-                setBrowserState("inactive") : setSelectedWebsite(websites[2]);
+            setBrowserState("open") && setSelectedWebsite(websites[1]) 
+            : selectedWebsite === websites[1] ?
+                setBrowserState("inactive") : setSelectedWebsite(websites[1]);
         }}>
             <span>WW Web</span>
         </button>
@@ -59,6 +65,8 @@ export default function StartMenu ({width, browserState, setBrowserState, langWi
         return (
             <li className="w95StartMenuEle w-100 px-4 py-2">
                 <button onClick={() => {
+                        setShowStartMenu(!showStartMenu)
+                        setShowLangMenu(false)
                         langWindowState === "inactive" || langWindowState === "closed"  ?
                         setlangWindowState("open") 
                         : setlangWindowState("inactive")
@@ -72,6 +80,8 @@ export default function StartMenu ({width, browserState, setBrowserState, langWi
         return (
             <li className="w95StartMenuEle w-100 px-4 py-2">
                 <button onClick={() => {
+                        setShowStartMenu(!showStartMenu)
+                        setShowLangMenu(false)
                         langWindowState === "inactive" || langWindowState === "closed"  ?
                         setlangWindowState("open") 
                         : setlangWindowState("inactive")
@@ -85,6 +95,8 @@ export default function StartMenu ({width, browserState, setBrowserState, langWi
         return (
             <li className="w95StartMenuEle w-100 px-4 py-2">
                 <button onClick={() => {
+                        setShowStartMenu(!showStartMenu)
+                        setShowLangMenu(false)
                         langWindowState === "inactive" || langWindowState === "closed"  ?
                         setlangWindowState("open") 
                         : setlangWindowState("inactive")
@@ -98,6 +110,8 @@ export default function StartMenu ({width, browserState, setBrowserState, langWi
         return (
             <li className="w95StartMenuEle w-100 px-4 py-2">
                 <button onClick={() => {
+                        setShowStartMenu(!showStartMenu)
+                        setShowLangMenu(false)
                         langWindowState === "inactive" || langWindowState === "closed"  ?
                         setlangWindowState("open") 
                         : setlangWindowState("inactive")

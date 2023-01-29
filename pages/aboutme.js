@@ -6,6 +6,7 @@ import AboutCards from "../components/AboutCards";
 //Mockwindows
 import BrowserWindow from "../components/BrowserWindow";
 import LanguageWindow from "../components/LanguageWindow"
+import NotEnoughRam from "../components/NotEoughRam"
 
 
 //webbrowser "sites" imports
@@ -42,6 +43,9 @@ export default function AboutMe() {
     const [langWindowState, setlangWindowState] = useState("closed")
     const [langWindowVis, setLangWindowVis] = useState(false)
     const [langSelected, setSelectedLang] = useState("EN")
+
+    //Insufficient RAM modal
+    const [RAMWindowVis, setRAMWindowVis] = useState(true)
     
     useEffect(() => {
         function handleResize() {
@@ -95,8 +99,9 @@ export default function AboutMe() {
     return (
     <div className="w-full">
         <section className="w-full win95 relative" id="desktop"  ref={sectionElementRef} >
-            <LanguageWindow langWindowVis={langWindowVis} setlangWindowState={setlangWindowState} setLangWindowVis={setLangWindowVis} langSelected={langSelected}/>
-            <BrowserWindow width={width} height={height} browserVis={browserVis} setBrowserState={setBrowserState} websites={websites} setWebsites={setWebsites} selectedWebsite={selectedWebsite} setSelectedWebsite={setSelectedWebsite} handleWebsiteChange={handleWebsiteChange}/>
+            <NotEnoughRam RAMWindowVis={RAMWindowVis} setRAMWindowVis={setRAMWindowVis}/>
+            <LanguageWindow langWindowVis={langWindowVis} setlangWindowState={setlangWindowState} setLangWindowVis={setLangWindowVis} langSelected={langSelected} setRAMWindowVis={setRAMWindowVis}/>
+            <BrowserWindow width={width} height={height} browserVis={browserVis} setBrowserState={setBrowserState} websites={websites} setWebsites={setWebsites} selectedWebsite={selectedWebsite} setSelectedWebsite={setSelectedWebsite} handleWebsiteChange={handleWebsiteChange} setRAMWindowVis={setRAMWindowVis}/>
             <div className=" mx-5 md:mb-14 md:mx-30 xl:mx-60 "><Techstack /></div>
             <StartMenu width={width} height={height} langWindowVis={langWindowVis} setLangWindowVis={setLangWindowVis} langWindowState={langWindowState} setlangWindowState={setlangWindowState} langSelected={langSelected} browserState={browserState} setBrowserState={setBrowserState} websites={websites} setWebsites={setWebsites} selectedWebsite={selectedWebsite} setSelectedWebsite={setSelectedWebsite} handleWebsiteChange={handleWebsiteChange}/>
             

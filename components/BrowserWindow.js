@@ -7,7 +7,7 @@ import IMDB from "../public/images/webmockups/IMDB.png"
 import WWWEB from "../public/images/webmockups/WWWEB.png"
 import YTREEL from "../public/images/webmockups/YTREEL.png"
 
-export default function BrowserWindow({browserVis, setBrowserState, height, width, websites, setWebsites, selectedWebsite, setSelectedWebsite, handleWebsiteChange}) {
+export default function BrowserWindow({browserVis, setBrowserState, setRAMWindowVis, width, websites, setWebsites, selectedWebsite, setSelectedWebsite, handleWebsiteChange}) {
 
     const [windowWidth, setWindowWidth] = useState(0);
     const [windowHeight, setWindowHeight] = useState(0);
@@ -89,7 +89,7 @@ export default function BrowserWindow({browserVis, setBrowserState, height, widt
           <div>NotScape Navigator</div> 
           <div className="text-black flex justify-end"> 
             <button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)] w95StartMenuEle cancel" onClick={() =>{setBrowserState("inactive")}}>-</button>
-            <button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)] disabled:opacity-50 disabled w95StartMenuEle">❐</button>
+            <button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)] w95StartMenuEle cancel" onClick={()=>{setRAMWindowVis(true)}}>❐</button>
             <button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)] w95StartMenuEle cancel" onClick={() =>{setBrowserState("closed")}}>x </button>
           </div>
         </div>

@@ -3,7 +3,7 @@ import React, {useState, useEffect, useRef} from 'react';
 
 import Image from "next/image"
 
-export default function LanguageWindow({langWindowVis, setLangWindowVis, setlangWindowState, height, width}) {
+export default function LanguageWindow({langWindowVis, setLangWindowVis, setlangWindowState, setRAMWindowVis, width}) {
 
     const [windowWidth, setWindowWidth] = useState(0);
     const [windowHeight, setWindowHeight] = useState(0);
@@ -54,8 +54,8 @@ export default function LanguageWindow({langWindowVis, setLangWindowVis, setlang
         <div className="w-full bg-blue-800 text-white text-center flex justify-between"> 
           <div className='pl-3'>Babel Translator '95</div> 
           <div className="text-black flex justify-end"> 
-            <button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)]" onClick={() =>{setlangWindowState("inactive")}}>-</button>
-            <button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)] disabled:opacity-50 disabled">❐</button>
+            <button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)] cancel" onClick={() =>{setlangWindowState("inactive")}}>-</button>
+            <button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)] cancel" onClick={()=>{setRAMWindowVis(true)}}>❐</button>
             <button className="bg-gray-300 px-2 shadow-[inset_-1px_-1px_2px_rgba(0,0,0,1)] cancel" onClick={() =>{setlangWindowState("closed")}}>x </button>
           </div>
         </div>
