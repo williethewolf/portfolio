@@ -33,7 +33,7 @@ export default function LanguageWindow({langWindowVis, setLangWindowVis, setlang
 
     const translateText = (lang) => {
       if (lang === "spanish") {
-          setTranslatedText("Soy un desarrollador de software con facilidad para aprender nuevos idiomas.");
+          setTranslatedText("Soy un desarrollador de software con facilidad para aprender nuevos lenguajes.");
       } else if (lang === "italian") {
           setTranslatedText("Sono uno sviluppatore di software con facilità nell'imparare nuove lingue.");
       } else if (lang === "french") {
