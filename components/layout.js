@@ -14,7 +14,7 @@ import Terminal from '../pages/terminal'
 import Navbar from './navBar'
 
 const name = 'Willie 8A'
-export const siteTitle = 'Willie 8A - Hackerman'
+export const siteTitle = 'Willie 8A - Hackerman | Software Engineer'
 
 
 export default function Layout({ children, home }) {
