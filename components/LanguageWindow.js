@@ -74,8 +74,6 @@ export default function LanguageWindow({langWindowVis, setLangWindowVis, setlang
             </div>
         </div>
         </section>
-        {/* <iframe className="w-full h-full" src={url} target='_top' sandbox='' loading='lazy' referrerpolicy>
-        </iframe> */}
     </div>
     </Draggable>
     ):null}

@@ -1,6 +1,3 @@
-
-
-
 export default function Clock () {
     let date = new Date();
     let hrs = date.getHours();

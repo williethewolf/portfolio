@@ -18,7 +18,6 @@ export default function AboutCards({width}){
       backgroundImage: `url(${aboutBg.src})`,
       backgroundSize: 'cover'
     }}>
-        {/* <h1 className="text-5xl md:text-7xl md:mr-20 flex flex-row-reverse"><p className="bg-white p-1">About me</p></h1> */}
         <div className="" style={{
       backgroundImage: `url(${greyBg.src})`,
       backgroundSize: 'cover'}}> 
@@ -37,7 +36,6 @@ export default function AboutCards({width}){
                 className="rounded-t-lg"
                 objectPosition='center'
                 />
-    {/* <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/> */}
                 </a>
                 <div className="p-6">
                 <h5 className="text-gray-900 text-2xl font-medium mb-2">Maker</h5>

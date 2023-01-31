@@ -17,18 +17,6 @@ const name = 'Willie 8A'
 export const siteTitle = 'Willie 8A - Hackerman'
 
 
-
-
-//   const BackgroundImage = () => (
-//     <Image
-//     src={profileBg}
-//     layout="fill"
-//     placeholder="blur"
-//     objectFit='contain'
-//     objectPosition='center'
-//     />
-//   )
-
 export default function Layout({ children, home }) {
     const [isHovering, setIsHovering] = useState(false)
 

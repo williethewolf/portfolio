@@ -2,10 +2,6 @@ import projectsArr from "../components/projects_data"
 import ProjectCard from "../components/ProjectCard"
 import projectsBg from "../public/images/grey_bg_transparent.svg"
 
-// const cards = projectsArr.map((ele, index) => {
-//     return <ProjectCard key={"card" + index} {...ele} />
-// })
-
 export default function Projects() {
   return (
     <div className='w-full text-center bg-center' style={{

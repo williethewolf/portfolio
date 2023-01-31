@@ -6,7 +6,7 @@ import AboutCards from "../components/AboutCards";
 //Mockwindows
 import BrowserWindow from "../components/BrowserWindow";
 import LanguageWindow from "../components/LanguageWindow"
-import NotEnoughRam from "../components/NotEoughRam"
+import NotEnoughRam from "../components/NotEnoughRam"
 
 
 //webbrowser "sites" imports

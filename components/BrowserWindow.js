@@ -1,21 +1,14 @@
-import LanguagesWeb from "./Webmocks/languagesweb"
 import Draggable from 'react-draggable'
 import React, {useState, useEffect, useRef} from 'react';
 
 import Image from "next/image"
-import IMDB from "../public/images/webmockups/IMDB.png"
-import WWWEB from "../public/images/webmockups/WWWEB.png"
-import YTREEL from "../public/images/webmockups/YTREEL.png"
 
-export default function BrowserWindow({browserVis, setBrowserState, setRAMWindowVis, width, websites, setWebsites, selectedWebsite, setSelectedWebsite, handleWebsiteChange}) {
+
+export default function BrowserWindow({browserVis, setBrowserState, setRAMWindowVis, width, websites, selectedWebsite, setSelectedWebsite, handleWebsiteChange}) {
 
     const [windowWidth, setWindowWidth] = useState(0);
     const [windowHeight, setWindowHeight] = useState(0);
-    // const [websites, setWebsites] = useState([{selector:IMDB,url:"https://www.imdb.me/williamwolffe", name:"IMDB"}, 
-    //                                           {selector:WWWEB,url:"https://www.williamwolffe.com", name:"WWWEB"},
-    //                                           {selector:YTREEL,url:"https://www.youtube.com/watch?v=xisUtskB8WI", name:"YTREEL"}
-    //                                         ]);
-    // const [selectedWebsite, setSelectedWebsite] = useState(websites[0])
+
     const browserElementRef = useRef(null);
     const dropdownElementRef = useRef(null);
     
@@ -36,12 +29,6 @@ export default function BrowserWindow({browserVis, setBrowserState, setRAMWindow
         
       }
     }, [browserVis,width])
-
-    // const handleWebsiteChange = (event) => {
-    //   console.log(JSON.parse(event.target.options[event.target.selectedIndex].value))
-    //   setSelectedWebsite(JSON.parse(event.target.options[event.target.selectedIndex].value));
-    //   console.log("the selected website " + selectedWebsite)
-    // }
   
     const selectNext = () => {
       // console.log("pressed select next")
@@ -52,7 +39,6 @@ export default function BrowserWindow({browserVis, setBrowserState, setRAMWindow
     }
 
     const selectPrevious = () => {
-      // console.log("pressed select previous");
       const currentWebsite = websites.find(website => website === selectedWebsite);
       const currentIndex = websites.indexOf(currentWebsite);
       const prevIndex = currentIndex === 0 ? websites.length - 1 : currentIndex - 1;
@@ -65,14 +51,6 @@ export default function BrowserWindow({browserVis, setBrowserState, setRAMWindow
         {website.url}
       </option>
     ))}
-
-    // const bounds = width > 1000?
-    // { left: -windowWidth*0.29, right: width-windowWidth-(windowWidth*0.31), top:-200, bottom: height-windowHeight-260} :
-    // { left: 0, right: width-windowWidth, top:-200, bottom: height-windowHeight-920};
-
-    // useEffect(() => {
-    //   handleWebsiteChange
-    // }, [selectedWebsite]);
 
   return (
     <>
@@ -99,6 +77,7 @@ export default function BrowserWindow({browserVis, setBrowserState, setRAMWindow
         <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center w95StartMenuEle cancel"><button className="" onClick={selectNext}><p>➪</p><p>Forward</p></button></div>
         <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center w95StartMenuEle cancel"><button className="disabled:opacity-25" disabled><p>↺</p><p>Reload</p></button></div>
         <div className="border border-solid border-2 m-0.5 w-16 shadow shadow-[2px_2px_1px_0px_rgba(0,0,0,1)] grid place-items-center w95StartMenuEle cancel"><button className="disabled:opacity-25" disabled><p>🔍</p><p>Search</p></button></div>
+        {/* Additional unused buttons */}
         {/* <button className="p-2">Guide</button>
         <button className="p-2">Print</button>
         <button className="p-2">Security</button> */}

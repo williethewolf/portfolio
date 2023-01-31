@@ -17,7 +17,6 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest"/>
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
       </Head>
-       {/*accordion-collapse collapse show*/}
       <section className='bg-slate-800' id="IDE">
         <IDE/>
       </section>

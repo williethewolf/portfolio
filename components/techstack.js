@@ -22,7 +22,6 @@ import mt from "../public/images/techstack_icons/materializecss.svg"
 import bo from "../public/images/techstack_icons/bootstrap.svg" 
 
 //FUTURE IMPLEMENTATIONS
-//PiP Browser (iframe) ->Netscape
 //Links/shortcuts requiring double click
 export default function Techstack(){
     return(

@@ -4,7 +4,7 @@ export default function Terminal() {
     return (
         <section className="w-full">
             <div  className="bg-neutral-900 py-5 px-5 h-52 md:h-62 md:px-8 md:py-8">
-            <h2 className="terminal_text text-2xl md:text-4xl md:text-3xl text-white">{">"}willieOchoa@8A:~/portfolio$ <ReactTypingEffect text={[
+            <h2 className="terminal_text text-2xl md:text-4xl md:text-3xl text-white lg:grid grid-cols-4 gap-6"><div className='inline-block'>{">"}willieOchoa@8A:~/portfolio$</div> <ReactTypingEffect  className="col-span-3 pl-5"text={[
                 "npx create-next-app willie-ochoa-personal-portfolio",
                 'echo "$(<$willie_ochoa_interesting facts.txt)',
                 "I'm passionate about AI and VR",

@@ -1,4 +1,4 @@
-import React, {useState, useEffect,} from 'react';
+import React, {useState} from 'react';
 import Clock from "../components/clock";
 import w95Logo from "../public/images/w95/w95logo.svg"
 import Image from "next/image";
@@ -160,10 +160,6 @@ export default function StartMenu ({width, browserState, setBrowserState, langWi
     }
     }
 
-    // const disableLinks={
-    //     pointer-events: 'none';
-    // }
-
     return (
         <div className=" bg-gray-300 flex justify-between relative text-xl">
                 <div> 
@@ -216,9 +212,7 @@ export default function StartMenu ({width, browserState, setBrowserState, langWi
                             </ul>
                                 ) : null}
                             </li>
-                            <div 
-                            // className='hidden'
-                            >
+                            <div>
                             <li className="px-4 py-2 w95StartMenuEle"><a href="#" className="opacity-50 cursor-not-allowed" style={{pointerEvents: 'none'}}>Other Projects	<span className="absolute right-0">➤</span></a></li>
                             <li className="px-4 py-2 w95StartMenuEle"><a href="#" className="opacity-50 cursor-not-allowed" style={{pointerEvents: 'none'}}>Games 	<span className="absolute right-0">➤</span></a></li>
                             <hr />
